@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>About – Xristin</title>
+    <meta
+      name="description"
+      content="About Xristin, an artist based in Leuven, working in oil on canvas."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper site-header-inner">
+        <div class="brand">
+          ХРИСТИН
+          <span>Oil painting • Leuven</span>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section wrapper">
+        <div class="section-header">
+          <h1>About</h1>
+        </div>
+
+        <div class="about-layout">
+          <div class="about-photo">
+            <!-- Replace portrait.jpg with a photo of yourself or your studio -->
+            <img src="images/portrait.jpg" alt="Portrait of the artist" />
+          </div>
+
+          <div class="about-text">
+            <p>
+              I am Kristina (Христина), an artist currently based in Leuven,
+              Belgium. I work primarily in oil on canvas, with a focus on quiet,
+              intimate interiors and fragments of everyday life.
+            </p>
+            <p>
+              My paintings often return to the same objects, corners and light
+              sources — a chair, a window, a tablecloth — tracing how they
+              change with time, mood and memory. Colour and atmosphere are as
+              important to me as the subject itself.
+            </p>
+            <p>
+              Originally from [your origin, if you wish to mention], I studied
+              [any studies, or “I am self-taught”] and have been developing this
+              body of work over the past years while living in different cities.
+            </p>
+            <p>
+              This site presents a selection of works. For available pieces,
+              commissions or collaborations, please feel free to reach out via
+              the contact page.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      © <span id="year"></span> Xristin — All rights reserved.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
