@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Contact – Xristin</title>
+    <meta
+      name="description"
+      content="Contact Xristin for enquiries about available works, commissions or collaborations."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper site-header-inner">
+        <div class="brand">
+          ХРИСТИН
+          <span>Oil painting • Leuven</span>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section wrapper">
+        <div class="section-header">
+          <h1>Contact</h1>
+          <p>
+            For enquiries about available works, commissions or collaborations,
+            you can use the form below or email me directly.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+          <div>
+            <!-- FORM: connect this via Formspree or a similar service -->
+            <form
+              action="https://formspree.io/f/YOUR_FORM_ID_HERE"
+              method="POST"
+            >
+              <div class="field-group">
+                <label for="name">Name</label>
+                <input
+                  id="name"
+                  type="text"
+                  name="name"
+                  required
+                  autocomplete="name"
+                />
+              </div>
+
+              <div class="field-group">
+                <label for="email">Email</label>
+                <input
+                  id="email"
+                  type="email"
+                  name="_replyto"
+                  required
+                  autocomplete="email"
+                />
+              </div>
+
+              <div class="field-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  required
+                  placeholder="Please include the title of any work you are interested in."
+                ></textarea>
+              </div>
+
+              <!-- Optional: subject field -->
+              <input
+                type="hidden"
+                name="_subject"
+                value="New enquiry from xristin.art"
+              />
+
+              <button type="submit" class="button">Send message</button>
+            </form>
+          </div>
+
+          <div class="contact-details">
+            <p><strong>Email</strong><br />youremail@example.com</p>
+
+            <p><strong>Location</strong><br />Leuven, Belgium</p>
+
+            <p><strong>Elsewhere</strong></p>
+            <div class="social-links">
+              <a href="https://www.instagram.com/yourhandle" target="_blank"
+                >Instagram</a
+              >
+              <a href="https://www.saatchiart.com/yourprofile" target="_blank"
+                >Saatchi Art</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      © <span id="year"></span> Xristin — All rights reserved.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
