@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Available Works – Xristin</title>
+    <meta
+      name="description"
+      content="Available oil paintings by Xristin – works currently for sale."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper site-header-inner">
+        <div class="brand">
+          ХРИСТИН
+          <span>Oil painting • Leuven</span>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="available.html" class="active">Available</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section wrapper">
+        <div class="section-header">
+          <h1>Available Works</h1>
+          <p>
+            A selection of paintings currently available. For purchase enquiries,
+            please use the <a href="contact.html">contact form</a> and mention
+            the title of the work.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <!-- WORK 1 -->
+          <div class="gallery-item">
+            <img src="images/work1.jpg" alt="Title of work 1" />
+            <div class="gallery-item-title">
+              <strong>Title of work 1</strong><br />
+              Oil on canvas, 40 × 50 cm, 2025<br />
+              <em>€650</em>
+            </div>
+          </div>
+
+          <!-- WORK 2 -->
+          <div class="gallery-item">
+            <img src="images/work2.jpg" alt="Title of work 2" />
+            <div class="gallery-item-title">
+              <strong>Title of work 2</strong><br />
+              Oil on canvas, 50 × 60 cm, 2025<br />
+              <em>€780</em>
+            </div>
+          </div>
+
+          <!-- WORK 3 -->
+          <div class="gallery-item">
+            <img src="images/work3.jpg" alt="Title of work 3" />
+            <div class="gallery-item-title">
+              <strong>Title of work 3</strong><br />
+              Oil on canvas, 30 × 40 cm, 2025<br />
+              <em>€480</em>
+            </div>
+          </div>
+
+          <!-- Add or remove items as needed; keep only works that are for sale -->
+        </div>
+
+        <p style="margin-top: 2rem; font-size: 0.85rem;">
+          Some works in the <a href="gallery.html">Gallery</a> may already be
+          in private collections. This page is kept up to date with pieces
+          currently available.
+        </p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      © <span id="year"></span> Xristin — All rights reserved.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
