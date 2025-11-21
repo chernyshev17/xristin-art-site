@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Gallery – Xristin</title>
+    <meta
+      name="description"
+      content="Gallery of oil paintings by Xristin – a selection of recent works."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper site-header-inner">
+        <div class="brand">
+          ХРИСТИН
+          <span>Oil painting • Leuven</span>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="section wrapper">
+        <div class="section-header">
+          <h1>Gallery</h1>
+          <p>
+            A selection of recent paintings. For availability and pricing,
+            please <a href="contact.html">get in touch</a>.
+          </p>
+        </div>
+
+        <!-- Slideshow -->
+        <div class="slideshow" data-slideshow>
+          <div class="slide active">
+            <img src="images/work1.jpg" alt="Title of work 1" />
+            <div class="slideshow-caption">
+              <strong>Title of work 1</strong> — oil on canvas, 40 × 50 cm, 2025
+            </div>
+          </div>
+          <div class="slide">
+            <img src="images/work2.jpg" alt="Title of work 2" />
+            <div class="slideshow-caption">
+              <strong>Title of work 2</strong> — oil on canvas, 50 × 60 cm, 2025
+            </div>
+          </div>
+          <div class="slide">
+            <img src="images/work3.jpg" alt="Title of work 3" />
+            <div class="slideshow-caption">
+              <strong>Title of work 3</strong> — oil on canvas, 30 × 40 cm, 2025
+            </div>
+          </div>
+
+        </div>
+
+        <div class="slideshow-controls">
+          <button class="slideshow-btn" type="button" data-prev>‹</button>
+          <button class="slideshow-btn" type="button" data-next>›</button>
+        </div>
+
+        <!-- Static grid below slideshow -->
+        <div class="gallery-grid">
+          <div class="gallery-item">
+            <img src="images/work1.jpg" alt="Title of work 1" />
+            <div class="gallery-item-title">Title of work 1</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/work2.jpg" alt="Title of work 2" />
+            <div class="gallery-item-title">Title of work 2</div>
+          </div>
+          <div class="gallery-item">
+            <img src="images/work3.jpg" alt="Title of work 3" />
+            <div class="gallery-item-title">Title of work 3</div>
+          </div>
+          <!-- Add more items as you like -->
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      © <span id="year"></span> Xristin — All rights reserved.
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
