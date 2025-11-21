@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Xristin – Oil Painter</title>
+    <meta
+      name="description"
+      content="Xristin is an oil painter based in Leuven, Belgium. Intimate, atmospheric works in oil on canvas."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="wrapper site-header-inner">
+        <div class="brand">
+          ХРИСТИН
+          <span>Oil painting • Leuven</span>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero wrapper">
+        <div class="hero-image">
+          <!-- Replace hero.jpg with one of your works -->
+          <img src="images/hero.jpg" alt="Oil painting by Xristin" />
+        </div>
+
+        <div>
+          <div class="hero-tagline">Oil on canvas</div>
+          <h1 class="hero-title">Quiet, intimate spaces in colour and light.</h1>
+          <p class="hero-text">
+            I am Kristina (Христина), an artist based in Leuven, working
+            primarily in oil on canvas. My paintings explore stillness, memory
+            and the traces of everyday life.
+          </p>
+          <div class="hero-actions">
+            <a href="gallery.html" class="button">View works</a>
+            <a href="contact.html" class="button secondary">Enquiries</a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      © <span id="year"></span> Xristin — All rights reserved.
+    </footer>
+
+    <script>
+      // Simple dynamic year in footer
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </body>
+</html>
