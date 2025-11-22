@@ -531,3 +531,35 @@ form .field-group {
     font-size: 1.6rem;
   }
 }
+/* ---- Available / Sold works meta ---- */
+
+.work-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.work-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.work-price {
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.badge-sold {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.05rem 0.4rem;
+  border-radius: 999px;
+  background: #b22222;
+  color: #fff;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+}
