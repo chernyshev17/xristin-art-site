@@ -12,10 +12,11 @@ html {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   color: #222;
   background: #f5f3f0;
-  overflow-x: hidden; /* чтобы страница не уезжала вбок */
+  overflow-x: hidden; /* запрещаем горизонтальный скролл */
 }
 
 img {
@@ -73,7 +74,7 @@ a {
   gap: 2rem;
 }
 
-..brand {
+.brand {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
@@ -201,7 +202,7 @@ a {
   margin-bottom: 1.5rem;
 }
 
-/* ---- Gallery grid ---- */
+/* ---- Gallery grid (может использоваться на Available и др.) ---- */
 
 .gallery-grid {
   display: grid;
@@ -219,53 +220,6 @@ a {
 .gallery-item-title {
   font-size: 0.85rem;
   margin-top: 0.5rem;
-}
-
-/* ---- Slideshow ---- */
-
-.slideshow {
-  position: relative;
-  margin-bottom: 2.5rem;
-  overflow: hidden;
-  border-radius: 12px;
-  background: #ddd;
-}
-
-.slide {
-  display: none;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide img {
-  width: 100%;
-}
-
-.slideshow-caption {
-  padding: 0.8rem 1rem 1rem;
-  font-size: 0.85rem;
-  background: rgba(245, 243, 240, 0.95);
-}
-
-.slideshow-controls {
-  position: relative;
-  margin-top: -2.5rem;
-  display: flex;
-  justify-content: space-between;
-  pointer-events: none;
-}
-
-.slideshow-btn {
-  pointer-events: auto;
-  border: none;
-  border-radius: 999px;
-  padding: 0.2rem 0.7rem;
-  background: rgba(0, 0, 0, 0.35);
-  color: #fff;
-  font-size: 1.4rem;
-  cursor: pointer;
 }
 
 /* ---- About ---- */
@@ -348,130 +302,14 @@ form .field-group {
   color: #666666;
 }
 
-/* ---- Responsive ---- */
-
-@media (max-width: 800px) {
-  .site-header-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .hero,
-  .about-layout,
-  .contact-layout {
-    grid-template-columns: 1fr;
-  }
-
-  .hero {
-    padding-top: 2.5rem;
-  }
-
-  .slideshow-controls {
-    margin-top: -2rem;
-  }
-}
-/* ===== Slideshow with thumbnails ===== */
-
-.slideshow {
-  margin-top: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.slideshow-main {
-  position: relative;
-}
-
-.slide {
-  display: none;
-}
-
-.slide.active {
-  display: block;
-}
-
-.slide img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: contain;
-}
-
-/* ограничиваем ширину контента, чтобы на огромных мониторах всё не разъезжалось */
-.section.wrapper {
-  max-width: 1100px;
-}
-
-/* кнопки слева/справа поверх картинки */
-.slideshow-controls {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  right: 0;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-  padding: 0 0.5rem;
-  pointer-events: none;
-}
-
-.slideshow-btn {
-  pointer-events: auto;
-  border: none;
-  background: rgba(255, 255, 255, 0.8);
-  padding: 0.25rem 0.6rem;
-  font-size: 1.4rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.slideshow-caption {
-  margin-top: 0.75rem;
-  font-size: 0.95rem;
-}
-
-/* полоса миниатюр */
-
-.slideshow-thumbs {
-  display: flex;
-  gap: 0.5rem;
-  margin-top: 1rem;
-  overflow-x: auto;
-  padding-bottom: 0.25rem;
-}
-
-.slideshow-thumb {
-  border: none;
-  background: transparent;
-  padding: 0;
-  cursor: pointer;
-  flex: 0 0 80px;
-  opacity: 0.6;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.slideshow-thumb img {
-  width: 100%;
-  height: 60px;
-  object-fit: cover;
-  display: block;
-}
-
-.slideshow-thumb:hover {
-  opacity: 0.9;
-  transform: translateY(-2px);
-}
-
-.slideshow-thumb.active {
-  opacity: 1;
-  outline: 2px solid rgba(0, 0, 0, 0.6);
-}
-/* ===== Slideshow layout & lightbox (updated v2) ===== */
+/* ---- Slideshow + thumbnails + lightbox (Gallery) ---- */
 
 .section.wrapper {
   max-width: 1100px;
 }
 
 /* общий блок слайдера */
+
 .slideshow {
   margin-top: 1.5rem;
   margin-bottom: 3rem;
@@ -480,10 +318,10 @@ form .field-group {
 .slideshow-main {
   position: relative;
   padding: 0.75rem;
-  background: #fdfaf6; /* чистый светлый фон вокруг картины */
-  border: 1px solid #e2ddd7;
+  background: #fdfaf6; /* нейтральный фон вокруг картины */
 }
 
+/* одна картинка за раз */
 .slide {
   display: none;
 }
@@ -492,11 +330,11 @@ form .field-group {
   display: block;
 }
 
-/* размер картин: влезает и картинка, и панель снизу */
+/* размер картин: видна и картина, и панель снизу */
 .slide img {
   display: block;
   max-width: 100%;
-  max-height: 60vh; /* было 75, стало меньше */
+  max-height: 55vh;
   height: auto;
   width: auto;
   margin: 0 auto;
@@ -510,7 +348,7 @@ form .field-group {
   line-height: 1.4;
 }
 
-/* широкие полупрозрачные зоны со стрелками по краям */
+/* большие кликабельные зоны со стрелками по краям */
 
 .slideshow-controls {
   position: absolute;
@@ -521,48 +359,48 @@ form .field-group {
   pointer-events: none;
 }
 
+/* зона клика по краю картины */
 .slideshow-btn {
   pointer-events: auto;
   border: none;
   background: transparent;
-  color: #ffffff;
-  width: 72px;
+  width: 22%; /* большая область слева/справа */
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
   cursor: pointer;
-  transition: background 0.2s ease, opacity 0.2s ease;
+  position: relative;
+  color: transparent; /* скрываем текст, рисуем стрелку псевдоэлементами */
 }
 
-/* градиенты по краям, чтобы не выглядело как две полоски */
-.slideshow-btn[data-prev] {
-  justify-content: flex-start;
-  padding-left: 0.75rem;
-  background: linear-gradient(
-    to right,
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0)
-  );
+/* круглая кнопка со стрелкой внутри зоны */
+.slideshow-btn::before {
+  content: "";
+  position: absolute;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.5);
 }
 
-.slideshow-btn[data-next] {
-  justify-content: flex-end;
-  padding-right: 0.75rem;
-  background: linear-gradient(
-    to left,
-    rgba(0, 0, 0, 0.35),
-    rgba(0, 0, 0, 0)
-  );
+.slideshow-btn::after {
+  content: "›";
+  position: absolute;
+  font-size: 1.8rem;
+  color: #ffffff;
+  line-height: 1;
+  transform: translateX(1px);
 }
 
-.slideshow-btn:hover {
-  background: rgba(0, 0, 0, 0.35);
+/* левая кнопка — другая стрелка */
+.slideshow-btn[data-prev]::after {
+  content: "‹";
+  transform: translateX(-1px);
 }
 
-.slideshow-btn:focus-visible {
-  outline: 2px solid #fff;
+.slideshow-btn:hover::before {
+  background: rgba(0, 0, 0, 0.65);
 }
 
 /* миниатюры под слайдером */
@@ -641,7 +479,24 @@ form .field-group {
   cursor: pointer;
 }
 
-/* адаптация под телефон */
+/* ---- Responsive ---- */
+
+@media (max-width: 800px) {
+  .site-header-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .hero,
+  .about-layout,
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    padding-top: 2.5rem;
+  }
+}
 
 @media (max-width: 600px) {
   .slideshow-main {
@@ -649,11 +504,15 @@ form .field-group {
   }
 
   .slide img {
-    max-height: 55vh; /* ещё чуть меньше, чтобы подпись + панель влазили */
+    max-height: 52vh; /* ещё чуть меньше, чтобы подпись + миниатюры влезали */
   }
 
-  .slideshow-btn {
-    width: 56px;
-    font-size: 1.7rem;
+  .slideshow-btn::before {
+    width: 38px;
+    height: 38px;
+  }
+
+  .slideshow-btn::after {
+    font-size: 1.6rem;
   }
 }
