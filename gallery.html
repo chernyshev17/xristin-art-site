@@ -1,94 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8" />
-  <title>Gallery – Xristina</title>
-  <meta
-    name="description"
-    content="Gallery of oil paintings by Xristina – a selection of recent works."
-  />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
-</head>
+    <meta charset="UTF-8" />
+    <title>Gallery – Xristin</title>
+    <meta
+      name="description"
+      content="Gallery of oil paintings by Xristin – grouped into still life, landscapes and birch series."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
   <body>
     <header class="site-header">
-  <div class="wrapper site-header-inner">
+      <div class="wrapper site-header-inner">
         <div class="brand">
-      <div class="brand-main">Xristina</div>
-      <div class="brand-sub">Oil painting • Belgium</div>
-    </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html" class="active">Gallery</a></li>
-        <li><a href="available.html">Available</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+          <div class="brand-main">Xristin</div>
+          <div class="brand-sub">Oil painting • Leuven</div>
+        </div>
+        <nav>
+          <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="available.html">Available</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
 
     <main>
       <section class="section wrapper">
         <div class="section-header">
           <h1>Gallery</h1>
           <p>
-            A selection of recent paintings. For availability and pricing,
-            please <a href="contact.html">get in touch</a>.
+            A selection of recent paintings, grouped into still lifes, landscapes
+            and the birch tree series.
           </p>
         </div>
 
-        <!-- Slideshow -->
+        <!-- STILL LIFE SECTION -->
+        <h2>Still Life</h2>
+        <p>
+          Intimate arrangements of everyday objects, built slowly in layers of oil.
+        </p>
+
         <div class="slideshow" data-slideshow>
           <div class="slide active">
-            <img src="images/work1.jpg" alt="Title of work 1" />
+            <img src="images/stilllife-1.jpg" alt="Still Life I" />
             <div class="slideshow-caption">
-              <strong>Title of work 1</strong> — oil on canvas, 40 × 50 cm, 2025
+              <strong>Still Life I</strong> — oil on canvas, 40 × 50 cm, 2023
             </div>
           </div>
           <div class="slide">
-            <img src="images/work2.jpg" alt="Title of work 2" />
+            <img src="images/stilllife-2.jpg" alt="Still Life II" />
             <div class="slideshow-caption">
-              <strong>Title of work 2</strong> — oil on canvas, 50 × 60 cm, 2025
+              <strong>Still Life II</strong> — oil on canvas, 40 × 50 cm, 2023
             </div>
           </div>
           <div class="slide">
-            <img src="images/work3.jpg" alt="Title of work 3" />
+            <img src="images/stilllife-3.jpg" alt="Still Life III" />
             <div class="slideshow-caption">
-              <strong>Title of work 3</strong> — oil on canvas, 30 × 40 cm, 2025
+              <strong>Still Life III</strong> — oil on canvas, 50 × 60 cm, 2024
             </div>
           </div>
 
+          <div class="slideshow-controls">
+            <button class="slideshow-btn" type="button" data-prev>‹</button>
+            <button class="slideshow-btn" type="button" data-next>›</button>
+          </div>
         </div>
 
-        <div class="slideshow-controls">
-          <button class="slideshow-btn" type="button" data-prev>‹</button>
-          <button class="slideshow-btn" type="button" data-next>›</button>
+        <!-- LANDSCAPES SECTION -->
+        <h2>Landscapes</h2>
+        <p>
+          Fields, paths and skies, painted in a quieter, atmospheric register.
+        </p>
+
+        <div class="slideshow" data-slideshow>
+          <div class="slide active">
+            <img src="images/landscape-1.jpg" alt="Landscape I" />
+            <div class="slideshow-caption">
+              <strong>Landscape I</strong> — oil on canvas, 50 × 70 cm, 2023
+            </div>
+          </div>
+          <div class="slide">
+            <img src="images/landscape-2.jpg" alt="Landscape II" />
+            <div class="slideshow-caption">
+              <strong>Landscape II</strong> — oil on canvas, 60 × 80 cm, 2024
+            </div>
+          </div>
+          <div class="slide">
+            <img src="images/landscape-3.jpg" alt="Landscape III" />
+            <div class="slideshow-caption">
+              <strong>Landscape III</strong> — oil on canvas, 40 × 60 cm, 2024
+            </div>
+          </div>
+
+          <div class="slideshow-controls">
+            <button class="slideshow-btn" type="button" data-prev>‹</button>
+            <button class="slideshow-btn" type="button" data-next>›</button>
+          </div>
         </div>
 
-        <!-- Static grid below slideshow -->
-        <div class="gallery-grid">
-          <div class="gallery-item">
-            <img src="images/work1.jpg" alt="Title of work 1" />
-            <div class="gallery-item-title">Title of work 1</div>
+        <!-- BIRCH SERIES SECTION -->
+        <h2>Birch Series</h2>
+        <p>
+          A series of expressive birch tree paintings, focusing on rhythm, gesture
+          and colour.
+        </p>
+
+        <div class="slideshow" data-slideshow>
+          <div class="slide active">
+            <img src="images/birch-1.jpg" alt="Birch I" />
+            <div class="slideshow-caption">
+              <strong>Birch I</strong> — oil on canvas, 90 × 50 cm, 2023
+            </div>
           </div>
-          <div class="gallery-item">
-            <img src="images/work2.jpg" alt="Title of work 2" />
-            <div class="gallery-item-title">Title of work 2</div>
+          <div class="slide">
+            <img src="images/birch-2.jpg" alt="Birch II" />
+            <div class="slideshow-caption">
+              <strong>Birch II</strong> — oil on canvas, 90 × 50 cm, 2023
+            </div>
           </div>
-          <div class="gallery-item">
-            <img src="images/work3.jpg" alt="Title of work 3" />
-            <div class="gallery-item-title">Title of work 3</div>
+          <div class="slide">
+            <img src="images/birch-3.jpg" alt="Birch III" />
+            <div class="slideshow-caption">
+              <strong>Birch III</strong> — oil on canvas, 90 × 50 cm, 2023
+            </div>
           </div>
-          <!-- Add more items as you like -->
+
+          <div class="slideshow-controls">
+            <button class="slideshow-btn" type="button" data-prev>‹</button>
+            <button class="slideshow-btn" type="button" data-next>›</button>
+          </div>
         </div>
       </section>
     </main>
