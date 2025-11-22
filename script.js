@@ -15,8 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     showSlide(currentIndex);
 
-    const nextBtn = document.querySelector("[data-next]");
-    const prevBtn = document.querySelector("[data-prev]");
+    const nextBtn = slideshow.querySelector("[data-next]");
+    const prevBtn = slideshow.querySelector("[data-prev]");
 
     if (nextBtn) {
       nextBtn.addEventListener("click", () => {
