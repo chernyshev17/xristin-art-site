@@ -198,6 +198,10 @@ a {
 .section {
   padding: 3rem 1.5rem;
 }
+/* на странице Gallery уменьшаем верхний отступ секции */
+.page-gallery .section {
+  padding-top: 1.8rem;
+}
 
 .section-header {
   margin-bottom: 1.5rem;
