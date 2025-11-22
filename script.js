@@ -48,7 +48,43 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
 
-    // стартуем с первого слайда
     showSlide(0);
   });
+
+  // Лайтбокс
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImage = document.getElementById("lightbox-image");
+  const lightboxClose = document.querySelector(".lightbox-close");
+
+  if (lightbox && lightboxImage && lightboxClose) {
+    const mainImages = document.querySelectorAll(".slide img");
+
+    mainImages.forEach((img) => {
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", () => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt || "";
+        lightbox.classList.add("open");
+      });
+    });
+
+    const closeLightbox = () => {
+      lightbox.classList.remove("open");
+      lightboxImage.src = "";
+    };
+
+    lightboxClose.addEventListener("click", closeLightbox);
+
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && lightbox.classList.contains("open")) {
+        closeLightbox();
+      }
+    });
+  }
 });
