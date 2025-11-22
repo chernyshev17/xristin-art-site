@@ -466,3 +466,164 @@ form .field-group {
   opacity: 1;
   outline: 2px solid rgba(0, 0, 0, 0.6);
 }
+/* ===== Slideshow layout & lightbox (updated) ===== */
+
+.section.wrapper {
+  max-width: 1100px;
+}
+
+/* общий блок слайдера */
+.slideshow {
+  margin-top: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.slideshow-main {
+  position: relative;
+}
+
+.slide {
+  display: none;
+}
+
+.slide.active {
+  display: block;
+}
+
+/* размер картин: влезают в экран без диких скроллов */
+.slide img {
+  display: block;
+  max-width: 100%;
+  max-height: 75vh;
+  height: auto;
+  width: auto;
+  margin: 0 auto;
+  object-fit: contain;
+}
+
+/* подпись под картиной */
+.slideshow-caption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+/* широкие полупрозрачные полосы со стрелками по краям */
+.slideshow-controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+}
+
+.slideshow-btn {
+  pointer-events: auto;
+  border: none;
+  background: rgba(0, 0, 0, 0.15);
+  color: #ffffff;
+  width: 52px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  cursor: pointer;
+  transition: background 0.2s ease, opacity 0.2s ease;
+}
+
+.slideshow-btn:hover {
+  background: rgba(0, 0, 0, 0.25);
+}
+
+/* миниатюры под слайдером */
+
+.slideshow-thumbs {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.slideshow-thumb {
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+  flex: 0 0 80px;
+  opacity: 0.6;
+  transition: opacity 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.slideshow-thumb img {
+  width: 100%;
+  height: 60px;
+  object-fit: cover;
+  display: block;
+}
+
+.slideshow-thumb:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.slideshow-thumb.active {
+  opacity: 1;
+  box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.7);
+}
+
+/* лайтбокс */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+}
+
+.lightbox.open {
+  display: flex;
+}
+
+.lightbox img {
+  max-width: 100%;
+  max-height: 90vh;
+  height: auto;
+  width: auto;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #ffffff;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* чуть уменьшаем полосы-стрелки на маленьких экранах */
+@media (max-width: 600px) {
+  .slideshow-btn {
+    width: 40px;
+    font-size: 1.5rem;
+  }
+
+  .slide img {
+    max-height: 70vh;
+  }
+}
