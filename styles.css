@@ -12,11 +12,10 @@ html {
 
 body {
   margin: 0;
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    "Helvetica Neue", Arial, sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: #222;
   background: #f5f3f0;
-  color: #222222;
-  line-height: 1.6;
+  overflow-x: hidden; /* чтобы страница не уезжала вбок */
 }
 
 img {
@@ -466,7 +465,7 @@ form .field-group {
   opacity: 1;
   outline: 2px solid rgba(0, 0, 0, 0.6);
 }
-/* ===== Slideshow layout & lightbox (updated) ===== */
+/* ===== Slideshow layout & lightbox (updated v2) ===== */
 
 .section.wrapper {
   max-width: 1100px;
@@ -480,6 +479,9 @@ form .field-group {
 
 .slideshow-main {
   position: relative;
+  padding: 0.75rem;
+  background: #fdfaf6; /* чистый светлый фон вокруг картины */
+  border: 1px solid #e2ddd7;
 }
 
 .slide {
@@ -490,11 +492,11 @@ form .field-group {
   display: block;
 }
 
-/* размер картин: влезают в экран без диких скроллов */
+/* размер картин: влезает и картинка, и панель снизу */
 .slide img {
   display: block;
   max-width: 100%;
-  max-height: 75vh;
+  max-height: 60vh; /* было 75, стало меньше */
   height: auto;
   width: auto;
   margin: 0 auto;
@@ -508,13 +510,11 @@ form .field-group {
   line-height: 1.4;
 }
 
-/* широкие полупрозрачные полосы со стрелками по краям */
+/* широкие полупрозрачные зоны со стрелками по краям */
+
 .slideshow-controls {
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -524,20 +524,45 @@ form .field-group {
 .slideshow-btn {
   pointer-events: auto;
   border: none;
-  background: rgba(0, 0, 0, 0.15);
+  background: transparent;
   color: #ffffff;
-  width: 52px;
+  width: 72px;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.8rem;
+  font-size: 2rem;
   cursor: pointer;
   transition: background 0.2s ease, opacity 0.2s ease;
 }
 
+/* градиенты по краям, чтобы не выглядело как две полоски */
+.slideshow-btn[data-prev] {
+  justify-content: flex-start;
+  padding-left: 0.75rem;
+  background: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0)
+  );
+}
+
+.slideshow-btn[data-next] {
+  justify-content: flex-end;
+  padding-right: 0.75rem;
+  background: linear-gradient(
+    to left,
+    rgba(0, 0, 0, 0.35),
+    rgba(0, 0, 0, 0)
+  );
+}
+
 .slideshow-btn:hover {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(0, 0, 0, 0.35);
+}
+
+.slideshow-btn:focus-visible {
+  outline: 2px solid #fff;
 }
 
 /* миниатюры под слайдером */
@@ -616,14 +641,19 @@ form .field-group {
   cursor: pointer;
 }
 
-/* чуть уменьшаем полосы-стрелки на маленьких экранах */
+/* адаптация под телефон */
+
 @media (max-width: 600px) {
-  .slideshow-btn {
-    width: 40px;
-    font-size: 1.5rem;
+  .slideshow-main {
+    padding: 0.5rem;
   }
 
   .slide img {
-    max-height: 70vh;
+    max-height: 55vh; /* ещё чуть меньше, чтобы подпись + панель влазили */
+  }
+
+  .slideshow-btn {
+    width: 56px;
+    font-size: 1.7rem;
   }
 }
