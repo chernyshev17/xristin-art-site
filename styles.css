@@ -106,7 +106,7 @@ a {
 
 .nav-links {
   display: flex;
-  flex-wrap: wrap; /* allow wrapping so 'Contact' doesn't get cut */
+  flex-wrap: nowrap;
   gap: 1.5rem;
   list-style: none;
   padding: 0;
@@ -247,7 +247,7 @@ a {
 
 /* tighter top padding on gallery page */
 .page-gallery .section {
-  padding-top: 1rem;
+  padding-top: 1.5rem;
 }
 
 .section-header {
@@ -311,10 +311,12 @@ a {
 
 .gallery-nav {
   display: flex;
+  flex-wrap: wrap;
   gap: 1rem;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.12em;
+  margin-top: 0.75rem;
 }
 
 .gallery-nav a {
@@ -741,11 +743,7 @@ form .field-group {
   .header-right {
     width: 100%;
     justify-content: space-between;
-    flex-wrap: wrap;
-  }
-
-  .nav-links {
-    gap: 1rem;
+    flex-wrap: nowrap;
   }
 
   .about-layout,
@@ -755,8 +753,24 @@ form .field-group {
 }
 
 @media (max-width: 600px) {
+  .header-right {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+
   .nav-links {
-    font-size: 0.8rem;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+  }
+
+  .lang-switcher {
+    align-self: flex-end;
+    margin-top: 0.2rem;
   }
 
   .slideshow-main {
