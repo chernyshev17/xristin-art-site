@@ -5,7 +5,7 @@
     <title>Gallery – Xristina</title>
     <meta
       name="description"
-      content="Gallery of oil paintings by Xristina – grouped into still lifes, landscapes and the birch series."
+      content="Gallery of oil paintings by Xristina – still lifes, landscapes and the birch series."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -22,40 +22,72 @@
       <div class="wrapper site-header-inner">
         <div class="brand">
           <div class="brand-main">Xristina</div>
-          <div class="brand-sub">Oil painting • Belgium</div>
+          <div class="brand-sub" data-i18n="brand.sub">
+            Oil painting • Belgium
+          </div>
         </div>
-        <nav>
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html" class="active">Gallery</a></li>
-            <li><a href="available.html">Available</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </nav>
+        <div class="header-right">
+          <nav>
+            <ul class="nav-links">
+              <li>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+              </li>
+              <li>
+                <a href="gallery.html" class="active" data-i18n="nav.gallery"
+                  >Gallery</a
+                >
+              </li>
+              <li>
+                <a href="available.html" data-i18n="nav.available">Available</a>
+              </li>
+              <li>
+                <a href="about.html" data-i18n="nav.about">About</a>
+              </li>
+              <li>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          </div>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="section wrapper">
+      <section class="section wrapper fade-in">
         <div class="section-header">
-          <h1>Gallery</h1>
-          <p>
-            A selection of recent paintings, grouped into still lifes, landscapes
-            and the birch tree series.
+          <h1 data-i18n="gallery.title">Gallery</h1>
+          <p data-i18n="gallery.intro">
+            A selection of recent paintings, grouped into still lifes,
+            landscapes and the birch tree series.
           </p>
         </div>
 
-        <!-- ================= STILL LIFE ================= -->
+        <!-- navigation between series -->
+        <div class="gallery-nav">
+          <a href="#still-life" data-i18n="series.stilllife_title">Still Life</a>
+          <a href="#landscapes" data-i18n="series.landscapes_title"
+            >Landscapes</a
+          >
+          <a href="#birch" data-i18n="series.birch_title">Birch Series</a>
+        </div>
+      </section>
 
-        <h2>Still Life</h2>
-        <p>
-          Intimate arrangements of everyday objects, built slowly in layers of oil.
+      <!-- ================= STILL LIFE ================= -->
+
+      <section class="section wrapper fade-in" id="still-life">
+        <h2 data-i18n="gallery.stilllife_title">Still Life</h2>
+        <p data-i18n="gallery.stilllife_desc">
+          Intimate arrangements of everyday objects, built slowly in layers of
+          oil.
         </p>
 
         <div class="slideshow" data-slideshow>
           <div class="slideshow-main">
-            <!-- Afternoon Tea -->
             <div class="slide active">
               <img
                 src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
@@ -66,7 +98,6 @@
               </div>
             </div>
 
-            <!-- Poppies -->
             <div class="slide">
               <img
                 src="images/xristina-Poppies-2024-60x40cm-avail-1500eur.jpeg"
@@ -77,7 +108,6 @@
               </div>
             </div>
 
-            <!-- Sunflowers -->
             <div class="slide">
               <img
                 src="images/xristina-Sunflowers-2024-80x60cm-avail-1200eur.jpeg"
@@ -89,8 +119,8 @@
             </div>
 
             <div class="slideshow-controls">
-              <button class="slideshow-btn" type="button" data-prev>‹</button>
-              <button class="slideshow-btn" type="button" data-next>›</button>
+              <button class="slideshow-btn" type="button" data-prev></button>
+              <button class="slideshow-btn" type="button" data-next></button>
             </div>
           </div>
 
@@ -115,17 +145,19 @@
             </button>
           </div>
         </div>
+      </section>
 
-        <!-- ================= LANDSCAPES ================= -->
+      <!-- ================= LANDSCAPES ================= -->
 
-        <h2>Landscapes</h2>
-        <p>
-          Fields, paths, water and skies, painted in a quieter, atmospheric register.
+      <section class="section wrapper fade-in" id="landscapes">
+        <h2 data-i18n="gallery.landscapes_title">Landscapes</h2>
+        <p data-i18n="gallery.landscapes_desc">
+          Fields, paths, water and skies, painted in a quieter, atmospheric
+          register.
         </p>
 
         <div class="slideshow" data-slideshow>
           <div class="slideshow-main">
-            <!-- порядок слайдов -->
             <div class="slide active">
               <img
                 src="images/xristina-Clouds-2023-50x50cm-avail-250eur.jpeg"
@@ -162,7 +194,8 @@
                 alt="Ghost of the Forest"
               />
               <div class="slideshow-caption">
-                <strong>Ghost of the Forest</strong> — oil on canvas, 60 × 80 cm, 2024
+                <strong>Ghost of the Forest</strong> — oil on canvas, 60 × 80 cm,
+                2024
               </div>
             </div>
 
@@ -182,7 +215,8 @@
                 alt="Path Across the Field"
               />
               <div class="slideshow-caption">
-                <strong>Path Across the Field</strong> — oil on canvas, 20 × 30 cm, 2021
+                <strong>Path Across the Field</strong> — oil on canvas, 20 × 30
+                cm, 2021
               </div>
             </div>
 
@@ -222,7 +256,8 @@
                 alt="Where Frost Whispers"
               />
               <div class="slideshow-caption">
-                <strong>Where Frost Whispers</strong> — oil on canvas, 60 × 80 cm, 2024
+                <strong>Where Frost Whispers</strong> — oil on canvas, 60 × 80
+                cm, 2024
               </div>
             </div>
 
@@ -242,7 +277,8 @@
                 alt="Pebble Beach, 7th Hole"
               />
               <div class="slideshow-caption">
-                <strong>Pebble Beach, 7th Hole</strong> — oil on canvas, 25 × 25 cm, 2024
+                <strong>Pebble Beach, 7th Hole</strong> — oil on canvas, 25 × 25
+                cm, 2024
               </div>
             </div>
 
@@ -252,18 +288,18 @@
                 alt="The Sunset of Kuindzhi"
               />
               <div class="slideshow-caption">
-                <strong>The Sunset of Kuindzhi</strong> — oil on canvas, 60 × 80 cm, 2024
+                <strong>The Sunset of Kuindzhi</strong> — oil on canvas, 60 × 80
+                cm, 2024
               </div>
             </div>
 
             <div class="slideshow-controls">
-              <button class="slideshow-btn" type="button" data-prev>‹</button>
-              <button class="slideshow-btn" type="button" data-next>›</button>
+              <button class="slideshow-btn" type="button" data-prev></button>
+              <button class="slideshow-btn" type="button" data-next></button>
             </div>
           </div>
 
           <div class="slideshow-thumbs">
-            <!-- порядок миниатюр совпадает со слайдами -->
             <button class="slideshow-thumb active" type="button">
               <img
                 src="images/xristina-Clouds-2023-50x50cm-avail-250eur.jpeg"
@@ -344,17 +380,19 @@
             </button>
           </div>
         </div>
+      </section>
 
-        <!-- ================= BIRCH SERIES ================= -->
+      <!-- ================= BIRCH SERIES ================= -->
 
-        <h2>Birch Series</h2>
-        <p>
-          A series of expressive birch paintings, focusing on rhythm, gesture and colour.
+      <section class="section wrapper fade-in" id="birch">
+        <h2 data-i18n="gallery.birch_title">Birch Series</h2>
+        <p data-i18n="gallery.birch_desc">
+          A series of expressive birch paintings, focusing on rhythm, gesture and
+          colour.
         </p>
 
         <div class="slideshow" data-slideshow>
           <div class="slideshow-main">
-            <!-- Birch I -->
             <div class="slide active">
               <img
                 src="images/xristina-Birch I-2023-90x50cm-avail-300eur.jpeg"
@@ -365,7 +403,6 @@
               </div>
             </div>
 
-            <!-- Birch II -->
             <div class="slide">
               <img
                 src="images/xristina-Birch II-2023-90x50cm-avail-300eur.jpeg"
@@ -376,18 +413,16 @@
               </div>
             </div>
 
-            <!-- Birch III -->
             <div class="slide">
               <img
                 src="images/xristina-Birch III-2023-90x50cm-avail-300eur.jpeg"
                 alt="Birch III"
               />
               <div class="slideshow-caption">
-  <strong>Birch III</strong> — oil on canvas, 90 × 50 cm, 2023
-</div>
+                <strong>Birch III</strong> — oil on canvas, 90 × 50 cm, 2023
+              </div>
             </div>
 
-            <!-- Birch IV -->
             <div class="slide">
               <img
                 src="images/xristina-Birch IV-2023-90x50cm-avail-300eur.jpeg"
@@ -398,7 +433,6 @@
               </div>
             </div>
 
-            <!-- Birch V -->
             <div class="slide">
               <img
                 src="images/xristina-Birch V-2023-90x50cm-avail-300eur.jpeg"
@@ -409,7 +443,6 @@
               </div>
             </div>
 
-            <!-- Birch VI -->
             <div class="slide">
               <img
                 src="images/xristina-Birch VI-2023-90x50cm-avail-300eur.jpeg"
@@ -420,7 +453,6 @@
               </div>
             </div>
 
-            <!-- Birch VII -->
             <div class="slide">
               <img
                 src="images/xristina-Birch VII-2023-90x50cm-avail-300eur.jpeg"
@@ -432,8 +464,8 @@
             </div>
 
             <div class="slideshow-controls">
-              <button class="slideshow-btn" type="button" data-prev>‹</button>
-              <button class="slideshow-btn" type="button" data-next>›</button>
+              <button class="slideshow-btn" type="button" data-prev></button>
+              <button class="slideshow-btn" type="button" data-next></button>
             </div>
           </div>
 
@@ -485,18 +517,19 @@
       </section>
     </main>
 
-    <!-- Лайтбокс для увеличения картины -->
+    <!-- Lightbox for enlarged view -->
     <div class="lightbox" id="lightbox">
       <button class="lightbox-close" type="button" aria-label="Close">×</button>
       <img src="" alt="" id="lightbox-image" />
     </div>
 
-    <footer class="site-footer">
-      © <span id="year"></span> Xristina — All rights reserved.
-    </footer>
+    <button class="back-to-top" type="button" aria-label="Back to top">
+      ↑
+    </button>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <footer class="site-footer">
+      © <span id="year"></span> Xristina —
+      <span data-i18n="footer.rights">All rights reserved.</span>
+    </footer>
   </body>
 </html>
