@@ -17,9 +17,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "Kristina paints still lifes and landscapes in oil, with a focus on atmosphere, silence and slow looking.",
       "home.hero_cta_gallery": "View gallery",
       "home.hero_cta_available": "Available works",
-      "home.current_focus_title": "Current focus",
-      "home.current_focus_text":
-        "Recently, the work has been circling around afternoon table scenes, winter horizons and the thin line between comfort and unease.",
       "home.series_title": "Series",
 
       "series.stilllife_title": "Still Life",
@@ -124,9 +121,6 @@ document.addEventListener("DOMContentLoaded", () => {
         "Kristina peint des natures mortes et des paysages \u00e0 l'huile, avec un accent sur l'atmosph\u00e8re, le silence et le regard lent.",
       "home.hero_cta_gallery": "Voir la galerie",
       "home.hero_cta_available": "Oeuvres disponibles",
-      "home.current_focus_title": "Travail actuel",
-      "home.current_focus_text":
-        "R\u00e9cemment, le travail tourne autour des tables de l'apr\u00e8s-midi, des horizons d'hiver et de cette ligne fine entre confort et inqui\u00e9tude.",
       "home.series_title": "S\u00e9ries",
 
       "series.stilllife_title": "Natures mortes",
@@ -228,14 +222,11 @@ document.addEventListener("DOMContentLoaded", () => {
       "footer.rights": "Alle rechten voorbehouden.",
 
       "home.hero_tagline": "Schilderijen in olieverf op doek",
-      "home.hero_title": "Stille licht, velden en bloemen.",
+      "home.hero_title": "Stil licht, velden en bloemen.",
       "home.hero_text":
         "Kristina schildert stillevens en landschappen in olieverf, met aandacht voor sfeer, stilte en vertraagd kijken.",
       "home.hero_cta_gallery": "Bekijk de galerij",
       "home.hero_cta_available": "Beschikbare werken",
-      "home.current_focus_title": "Huidige focus",
-      "home.current_focus_text":
-        "De laatste tijd draait het werk rond taferelen aan de middagtafel, winterse horizonten en de dunne lijn tussen comfort en onrust.",
       "home.series_title": "Reeksen",
 
       "series.stilllife_title": "Stillevens",
@@ -360,6 +351,16 @@ document.addEventListener("DOMContentLoaded", () => {
       applyTranslations(lang);
     });
   });
+
+  // ===== Force gallery to open at top (fix iOS jump) =====
+  if (
+    document.body.classList.contains("page-gallery") &&
+    !window.location.hash
+  ) {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+    }, 50);
+  }
 
   // ===== Slideshow (gallery page) =====
 
@@ -549,7 +550,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if (workParam) {
     const workInput = document.getElementById("work");
     if (workInput) {
-      workInput.value = decodeURIComponent(workParam);
+      workInput.value = workParam; // no extra decode
     }
   }
 
