@@ -1,126 +1,145 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8" />
-  <title>Contact – Xristin</title>
-  <meta
-    name="description"
-    content="Contact Xristina for enquiries about available works, commissions or collaborations."
-  />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
-</head>
-  <body>
+    <meta charset="UTF-8" />
+    <title>Contact – Xristina</title>
+    <meta
+      name="description"
+      content="Contact artist Xristina about available works, commissions or exhibitions."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="page-contact">
     <header class="site-header">
-  <div class="wrapper site-header-inner">
-    <div class="brand">
-      <div class="brand-main">Xristina</div>
-      <div class="brand-sub">Oil painting • Belgium</div>
-    </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="available.html">Available</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+      <div class="wrapper site-header-inner">
+        <div class="brand">
+          <div class="brand-main">Xristina</div>
+          <div class="brand-sub" data-i18n="brand.sub">
+            Oil painting • Belgium
+          </div>
+        </div>
+        <div class="header-right">
+          <nav>
+            <ul class="nav-links">
+              <li>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+              </li>
+              <li>
+                <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="available.html" data-i18n="nav.available">Available</a>
+              </li>
+              <li>
+                <a href="about.html" data-i18n="nav.about">About</a>
+              </li>
+              <li>
+                <a href="contact.html" class="active" data-i18n="nav.contact"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </nav>
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <main>
-      <section class="section wrapper">
+      <section class="section wrapper fade-in">
         <div class="section-header">
-          <h1>Contact</h1>
-          <p>
-            For enquiries about available works, commissions or collaborations,
-            you can use the form below or email me directly.
+          <h1 data-i18n="contact.title">Contact</h1>
+          <p data-i18n="contact.intro">
+            For enquiries about available works, commissions or exhibitions,
+            please use the form below or email directly.
           </p>
         </div>
 
         <div class="contact-layout">
           <div>
-            <!-- FORM: connect this via Formspree or a similar service -->
-            <form
-              action="https://formspree.io/f/xqajkaww"
-              method="POST"
-            >
+            <form class="contact-form">
               <div class="field-group">
-                <label for="name">Name</label>
-                <input
-                  id="name"
-                  type="text"
-                  name="name"
-                  required
-                  autocomplete="name"
-                />
+                <label for="name" data-i18n="contact.form_name_label">Name</label>
+                <input type="text" id="name" name="name" />
               </div>
-
               <div class="field-group">
-                <label for="email">Email</label>
-                <input
-                  id="email"
-                  type="email"
-                  name="_replyto"
-                  required
-                  autocomplete="email"
-                />
+                <label for="email" data-i18n="contact.form_email_label"
+                  >Email</label
+                >
+                <input type="email" id="email" name="email" />
               </div>
-
               <div class="field-group">
-                <label for="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  required
-                  placeholder="Please include the title of any work you are interested in."
-                ></textarea>
+                <label for="work" data-i18n="contact.form_work_label"
+                  >Work you are interested in</label
+                >
+                <input type="text" id="work" name="work" />
               </div>
-
-              <!-- Optional: subject field -->
-              <input
-                type="hidden"
-                name="_subject"
-                value="New enquiry from xristin.art"
-              />
-
-              <button type="submit" class="button">Send message</button>
+              <div class="field-group">
+                <label for="message" data-i18n="contact.form_message_label"
+                  >Message</label
+                >
+                <textarea id="message" name="message"></textarea>
+              </div>
+              <button type="submit" class="button" data-i18n="contact.form_submit">
+                Send message
+              </button>
             </form>
           </div>
-
           <div class="contact-details">
-            <p><strong>Email</strong><br />xristina.gallery@gmail.com</p>
+            <h2 data-i18n="contact.side_title">Studio & contact</h2>
+            <p data-i18n="contact.side_text_1">
+              Based in Belgium, working mainly in oil on canvas.
+            </p>
+            <p data-i18n="contact.side_text_2">
+              If you are interested in a specific painting, please mention its
+              title and size so it’s easy to identify.
+            </p>
 
-            <p><strong>Location</strong><br />Leuven, Belgium</p>
-
-            <p><strong>Elsewhere</strong></p>
-            <div class="social-links">
-              <a href="https://www.instagram.com/yourhandle" target="_blank"
-                >Instagram</a
-              >
-              <a href="https://www.saatchiart.com/yourprofile" target="_blank"
-                >Saatchi Art</a
-              >
+            <div class="contact-faq">
+              <h3 data-i18n="contact.faq_title">Frequently asked</h3>
+              <p>
+                <strong data-i18n="contact.faq_view_q"
+                  >Can I see a work in person?</strong
+                ><br />
+                <span data-i18n="contact.faq_view_a">
+                  Viewings in Belgium may be possible by appointment, depending
+                  on the work.
+                </span>
+              </p>
+              <p>
+                <strong data-i18n="contact.faq_commission_q"
+                  >Do you accept commissions?</strong
+                ><br />
+                <span data-i18n="contact.faq_commission_a">
+                  Occasionally, yes – especially for still lifes and interiors.
+                  Feel free to describe what you have in mind.
+                </span>
+              </p>
             </div>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      © <span id="year"></span> Xristin — All rights reserved.
-    </footer>
+    <button class="back-to-top" type="button" aria-label="Back to top">
+      ↑
+    </button>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <footer class="site-footer">
+      © <span id="year"></span> Xristina —
+      <span data-i18n="footer.rights">All rights reserved.</span>
+    </footer>
   </body>
 </html>
