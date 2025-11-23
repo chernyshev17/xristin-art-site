@@ -106,6 +106,7 @@ a {
 
 .nav-links {
   display: flex;
+  flex-wrap: wrap; /* allow wrapping so 'Contact' doesn't get cut */
   gap: 1.5rem;
   list-style: none;
   padding: 0;
@@ -244,8 +245,9 @@ a {
   padding: 3rem 1.5rem;
 }
 
+/* tighter top padding on gallery page */
 .page-gallery .section {
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 
 .section-header {
@@ -327,7 +329,6 @@ a {
 
 /* ---- Slideshow + thumbnails + lightbox ---- */
 
-/* slideshow block */
 .slideshow {
   margin-top: 1.5rem;
   margin-bottom: 3rem;
@@ -336,10 +337,9 @@ a {
 .slideshow-main {
   position: relative;
   padding: 0.75rem;
-  background: #fdfaf6; /* neutral frame around painting */
+  background: #fdfaf6;
 }
 
-/* one image at a time */
 .slide {
   display: none;
 }
@@ -348,7 +348,6 @@ a {
   display: block;
 }
 
-/* painting size: image + thumbs fit on screen */
 .slide img {
   display: block;
   max-width: 100%;
@@ -359,14 +358,11 @@ a {
   object-fit: contain;
 }
 
-/* caption under painting */
 .slideshow-caption {
   margin-top: 0.75rem;
   font-size: 0.95rem;
   line-height: 1.4;
 }
-
-/* big clickable zones on left/right */
 
 .slideshow-controls {
   position: absolute;
@@ -377,7 +373,6 @@ a {
   pointer-events: none;
 }
 
-/* invisible wide buttons */
 .slideshow-btn {
   pointer-events: auto;
   border: none;
@@ -392,7 +387,7 @@ a {
   color: transparent;
 }
 
-/* circular arrow background */
+/* circular background for arrows */
 .slideshow-btn::before {
   content: "";
   position: absolute;
@@ -402,7 +397,7 @@ a {
   background: rgba(0, 0, 0, 0.5);
 }
 
-/* arrow symbol */
+/* arrow glyph */
 .slideshow-btn::after {
   content: "›";
   position: absolute;
@@ -730,6 +725,11 @@ form .field-group {
     grid-template-columns: 1fr;
     padding-top: 2.5rem;
   }
+
+  /* show the painting first on mobile */
+  .hero-image {
+    order: -1;
+  }
 }
 
 @media (max-width: 800px) {
@@ -744,17 +744,21 @@ form .field-group {
     flex-wrap: wrap;
   }
 
+  .nav-links {
+    gap: 1rem;
+  }
+
   .about-layout,
   .contact-layout {
     grid-template-columns: 1fr;
   }
-
-  .hero {
-    padding-top: 2.5rem;
-  }
 }
 
 @media (max-width: 600px) {
+  .nav-links {
+    font-size: 0.8rem;
+  }
+
   .slideshow-main {
     padding: 0.5rem;
   }
