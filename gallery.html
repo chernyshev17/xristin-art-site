@@ -62,465 +62,483 @@
         <div class="section-header">
           <h1 data-i18n="gallery.title">Gallery</h1>
           <p data-i18n="gallery.intro">
-            A selection of recent paintings, grouped into still lifes,
-            landscapes and the birch tree series.
+            A selection of recent paintings, grouped into still lifes, landscapes
+            and the birch tree series.
           </p>
-        </div>
-
-        <!-- navigation between series -->
-        <div class="gallery-nav">
-          <a href="#still-life" data-i18n="series.stilllife_title">Still Life</a>
-          <a href="#landscapes" data-i18n="series.landscapes_title"
-            >Landscapes</a
-          >
-          <a href="#birch" data-i18n="series.birch_title">Birch Series</a>
-        </div>
-      </section>
-
-      <!-- ================= STILL LIFE ================= -->
-
-      <section class="section wrapper fade-in" id="still-life">
-        <h2 data-i18n="gallery.stilllife_title">Still Life</h2>
-        <p data-i18n="gallery.stilllife_desc">
-          Intimate arrangements of everyday objects, built slowly in layers of
-          oil.
-        </p>
-
-        <div class="slideshow" data-slideshow>
-          <div class="slideshow-main">
-            <div class="slide active">
-              <img
-                src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
-                alt="Afternoon Tea"
-              />
-              <div class="slideshow-caption">
-                <strong>Afternoon Tea</strong> — oil on canvas, 60 × 80 cm, 2024
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Poppies-2024-60x40cm-avail-1500eur.jpeg"
-                alt="Poppies"
-              />
-              <div class="slideshow-caption">
-                <strong>Poppies</strong> — oil on canvas, 60 × 40 cm, 2024
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Sunflowers-2024-80x60cm-avail-1200eur.jpeg"
-                alt="Sunflowers"
-              />
-              <div class="slideshow-caption">
-                <strong>Sunflowers</strong> — oil on canvas, 80 × 60 cm, 2024
-              </div>
-            </div>
-
-            <div class="slideshow-controls">
-              <button class="slideshow-btn" type="button" data-prev></button>
-              <button class="slideshow-btn" type="button" data-next></button>
-            </div>
-          </div>
-
-          <div class="slideshow-thumbs">
-            <button class="slideshow-thumb active" type="button">
-              <img
-                src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
-                alt="Afternoon Tea thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Poppies-2024-60x40cm-avail-1500eur.jpeg"
-                alt="Poppies thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Sunflowers-2024-80x60cm-avail-1200eur.jpeg"
-                alt="Sunflowers thumbnail"
-              />
-            </button>
+          <div class="gallery-nav">
+            <a href="#still-life" data-i18n="gallery.stilllife_title"
+              >Still Life</a
+            >
+            <a href="#landscapes" data-i18n="gallery.landscapes_title"
+              >Landscapes</a
+            >
+            <a href="#birch" data-i18n="gallery.birch_title">Birch Series</a>
           </div>
         </div>
-      </section>
 
-      <!-- ================= LANDSCAPES ================= -->
+        <!-- STILL LIFE -->
+        <section id="still-life" class="gallery-section fade-in">
+          <h2 data-i18n="gallery.stilllife_title">Still Life</h2>
+          <p data-i18n="gallery.stilllife_desc">
+            Intimate arrangements of everyday objects, built slowly in layers of
+            oil.
+          </p>
 
-      <section class="section wrapper fade-in" id="landscapes">
-        <h2 data-i18n="gallery.landscapes_title">Landscapes</h2>
-        <p data-i18n="gallery.landscapes_desc">
-          Fields, paths, water and skies, painted in a quieter, atmospheric
-          register.
-        </p>
+          <div class="slideshow" data-slideshow>
+            <div class="slideshow-main">
+              <!-- slides -->
+              <div class="slide active">
+                <img
+                  src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
+                  alt="Afternoon Tea, 60 × 80 cm, 2024"
+                />
+                <div class="slideshow-caption">
+                  <strong>Afternoon Tea</strong> — oil on canvas, 60 × 80 cm,
+                  2024
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Poppies-2024-60x40cm-avail-1500eur.jpeg"
+                  alt="Poppies, 60 × 40 cm, 2024"
+                />
+                <div class="slideshow-caption">
+                  <strong>Poppies</strong> — oil on canvas, 60 × 40 cm, 2024
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Sunflowers-2024-80x60cm-avail-1200eur.jpeg"
+                  alt="Sunflowers, 80 × 60 cm, 2024"
+                />
+                <div class="slideshow-caption">
+                  <strong>Sunflowers</strong> — oil on canvas, 80 × 60 cm, 2024
+                </div>
+              </div>
 
-        <div class="slideshow" data-slideshow>
-          <div class="slideshow-main">
-            <div class="slide active">
-              <img
-                src="images/xristina-Clouds-2023-50x50cm-avail-250eur.jpeg"
-                alt="Clouds"
-              />
-              <div class="slideshow-caption">
-                <strong>Clouds</strong> — oil on canvas, 50 × 50 cm, 2023
+              <div class="slideshow-controls">
+                <button
+                  class="slideshow-btn"
+                  type="button"
+                  data-prev
+                  aria-label="Previous"
+                ></button>
+                <button
+                  class="slideshow-btn"
+                  type="button"
+                  data-next
+                  aria-label="Next"
+                ></button>
               </div>
             </div>
 
-            <div class="slide">
-              <img
-                src="images/xristina-Cypress-2023-20x30cm-SOLD-90eur.jpeg"
-                alt="Cypress"
-              />
-              <div class="slideshow-caption">
-                <strong>Cypress</strong> — oil on canvas, 20 × 30 cm, 2023
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Farm-House-2024-25x25cm-avail-80eur.jpeg"
-                alt="Farm House"
-              />
-              <div class="slideshow-caption">
-                <strong>Farm House</strong> — oil on canvas, 25 × 25 cm, 2024
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg"
-                alt="Ghost of the Forest"
-              />
-              <div class="slideshow-caption">
-                <strong>Ghost of the Forest</strong> — oil on canvas, 60 × 80 cm,
-                2024
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Grey-Hour-2024-20x40cm-avail-200eur.jpeg"
-                alt="Grey Hour"
-              />
-              <div class="slideshow-caption">
-                <strong>Grey Hour</strong> — oil on canvas, 20 × 40 cm, 2024
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Path-Across-the-Field-2021-20x30cm-avail-80eur.jpeg"
-                alt="Path Across the Field"
-              />
-              <div class="slideshow-caption">
-                <strong>Path Across the Field</strong> — oil on canvas, 20 × 30
-                cm, 2021
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-River-2024-30x40cm-avail-100eur.jpeg"
-                alt="River"
-              />
-              <div class="slideshow-caption">
-                <strong>River</strong> — oil on canvas, 30 × 40 cm, 2024
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Savanna-Sunset-2024-30x40cm-SOLD-500eur.jpeg"
-                alt="Savanna Sunset"
-              />
-              <div class="slideshow-caption">
-                <strong>Savanna Sunset</strong> — oil on canvas, 30 × 40 cm, 2024
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Thunder-2025-40x20cm-avail-120eur.jpeg"
-                alt="Thunder"
-              />
-              <div class="slideshow-caption">
-                <strong>Thunder</strong> — oil on canvas, 40 × 20 cm, 2025
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
-                alt="Where Frost Whispers"
-              />
-              <div class="slideshow-caption">
-                <strong>Where Frost Whispers</strong> — oil on canvas, 60 × 80
-                cm, 2024
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Golden-Sunset-2022-30x20cm-SOLD-100eur.jpeg"
-                alt="Golden Sunset"
-              />
-              <div class="slideshow-caption">
-                <strong>Golden Sunset</strong> — oil on canvas, 30 × 20 cm, 2022
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Pebble-Beach-7-Hole-2024-25x25cm-SOLD-60eur.jpeg"
-                alt="Pebble Beach, 7th Hole"
-              />
-              <div class="slideshow-caption">
-                <strong>Pebble Beach, 7th Hole</strong> — oil on canvas, 25 × 25
-                cm, 2024
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-The-Sunset-of-Kuindzhi-2024-60x80cm-avail-300eur.jpeg"
-                alt="The Sunset of Kuindzhi"
-              />
-              <div class="slideshow-caption">
-                <strong>The Sunset of Kuindzhi</strong> — oil on canvas, 60 × 80
-                cm, 2024
-              </div>
-            </div>
-
-            <div class="slideshow-controls">
-              <button class="slideshow-btn" type="button" data-prev></button>
-              <button class="slideshow-btn" type="button" data-next></button>
+            <div class="slideshow-thumbs">
+              <button class="slideshow-thumb active" type="button">
+                <img
+                  src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
+                  alt="Afternoon Tea thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Poppies-2024-60x40cm-avail-1500eur.jpeg"
+                  alt="Poppies thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Sunflowers-2024-80x60cm-avail-1200eur.jpeg"
+                  alt="Sunflowers thumbnail"
+                />
+              </button>
             </div>
           </div>
+        </section>
 
-          <div class="slideshow-thumbs">
-            <button class="slideshow-thumb active" type="button">
-              <img
-                src="images/xristina-Clouds-2023-50x50cm-avail-250eur.jpeg"
-                alt="Clouds thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Cypress-2023-20x30cm-SOLD-90eur.jpeg"
-                alt="Cypress thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Farm-House-2024-25x25cm-avail-80eur.jpeg"
-                alt="Farm House thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg"
-                alt="Ghost of the Forest thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Grey-Hour-2024-20x40cm-avail-200eur.jpeg"
-                alt="Grey Hour thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Path-Across-the-Field-2021-20x30cm-avail-80eur.jpeg"
-                alt="Path Across the Field thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-River-2024-30x40cm-avail-100eur.jpeg"
-                alt="River thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Savanna-Sunset-2024-30x40cm-SOLD-500eur.jpeg"
-                alt="Savanna Sunset thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Thunder-2025-40x20cm-avail-120eur.jpeg"
-                alt="Thunder thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
-                alt="Where Frost Whispers thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Golden-Sunset-2022-30x20cm-SOLD-100eur.jpeg"
-                alt="Golden Sunset thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Pebble-Beach-7-Hole-2024-25x25cm-SOLD-60eur.jpeg"
-                alt="Pebble Beach, 7th Hole thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-The-Sunset-of-Kuindzhi-2024-60x80cm-avail-300eur.jpeg"
-                alt="The Sunset of Kuindzhi thumbnail"
-              />
-            </button>
+        <!-- LANDSCAPES -->
+        <section id="landscapes" class="gallery-section fade-in">
+          <h2 data-i18n="gallery.landscapes_title">Landscapes</h2>
+          <p data-i18n="gallery.landscapes_desc">
+            Fields, paths, water and skies, painted in a quieter, atmospheric
+            register.
+          </p>
+
+          <div class="slideshow" data-slideshow>
+            <div class="slideshow-main">
+              <!-- each slide -->
+              <div class="slide active">
+                <img
+                  src="images/xristina-Clouds-2023-50x50cm-avail-250eur.jpeg"
+                  alt="Clouds, 50 × 50 cm, 2023"
+                />
+                <div class="slideshow-caption">
+                  <strong>Clouds</strong> — oil on canvas, 50 × 50 cm, 2023
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Grey-Hour-2024-20x40cm-avail-200eur.jpeg"
+                  alt="Grey Hour, 20 × 40 cm, 2024"
+                />
+                <div class="slideshow-caption">
+                  <strong>Grey Hour</strong> — oil on canvas, 20 × 40 cm, 2024
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Path-Across-the-Field-2021-20x30cm-avail-80eur.jpeg"
+                  alt="Path Across the Field, 20 × 30 cm, 2021"
+                />
+                <div class="slideshow-caption">
+                  <strong>Path Across the Field</strong> — oil on canvas, 20 ×
+                  30 cm, 2021
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-River-2024-30x40cm-avail-100eur.jpeg"
+                  alt="River, 30 × 40 cm, 2024"
+                />
+                <div class="slideshow-caption">
+                  <strong>River</strong> — oil on canvas, 30 × 40 cm, 2024
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Thunder-2025-40x20cm-avail-120eur.jpeg"
+                  alt="Thunder, 40 × 20 cm, 2025"
+                />
+                <div class="slideshow-caption">
+                  <strong>Thunder</strong> — oil on canvas, 40 × 20 cm, 2025
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Farm-House-2024-25x25cm-avail-80eur.jpeg"
+                  alt="Farm House, 25 × 25 cm, 2024"
+                />
+                <div class="slideshow-caption">
+                  <strong>Farm House</strong> — oil on canvas, 25 × 25 cm, 2024
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
+                  alt="Where Frost Whispers, 60 × 80 cm, 2024"
+                />
+                <div class="slideshow-caption">
+                  <strong>Where Frost Whispers</strong> — oil on canvas, 60 × 80
+                  cm, 2024
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-The-Sunset-of-Kuindzhi-2024-60x80cm-avail-300eur.jpeg"
+                  alt="The Sunset of Kuindzhi, 60 × 80 cm, 2024"
+                />
+                <div class="slideshow-caption">
+                  <strong>The Sunset of Kuindzhi</strong> — oil on canvas, 60 ×
+                  80 cm, 2024
+                </div>
+              </div>
+
+              <!-- sold landscapes also visible here -->
+              <div class="slide">
+                <img
+                  src="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg"
+                  alt="Ghost of the Forest, 60 × 80 cm, 2024 (sold)"
+                />
+                <div class="slideshow-caption">
+                  <strong>Ghost of the Forest</strong> — oil on canvas, 60 × 80
+                  cm, 2024 (sold)
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Savanna-Sunset-2024-30x40cm-SOLD-500eur.jpeg"
+                  alt="Savanna Sunset, 30 × 40 cm, 2024 (sold)"
+                />
+                <div class="slideshow-caption">
+                  <strong>Savanna Sunset</strong> — oil on canvas, 30 × 40 cm,
+                  2024 (sold)
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Golden-Sunset-2022-30x20cm-SOLD-100eur.jpeg"
+                  alt="Golden Sunset, 30 × 20 cm, 2022 (sold)"
+                />
+                <div class="slideshow-caption">
+                  <strong>Golden Sunset</strong> — oil on canvas, 30 × 20 cm,
+                  2022 (sold)
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Pebble-Beach-7-Hole-2024-25x25cm-SOLD-60eur.jpeg"
+                  alt="Pebble Beach 7 Hole, 25 × 25 cm, 2024 (sold)"
+                />
+                <div class="slideshow-caption">
+                  <strong>Pebble Beach 7 Hole</strong> — oil on canvas, 25 × 25
+                  cm, 2024 (sold)
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Cypress-2023-20x30cm-SOLD-90eur.jpeg"
+                  alt="Cypress, 20 × 30 cm, 2023 (sold)"
+                />
+                <div class="slideshow-caption">
+                  <strong>Cypress</strong> — oil on canvas, 20 × 30 cm, 2023
+                  (sold)
+                </div>
+              </div>
+
+              <div class="slideshow-controls">
+                <button
+                  class="slideshow-btn"
+                  type="button"
+                  data-prev
+                  aria-label="Previous"
+                ></button>
+                <button
+                  class="slideshow-btn"
+                  type="button"
+                  data-next
+                  aria-label="Next"
+                ></button>
+              </div>
+            </div>
+
+            <div class="slideshow-thumbs">
+              <!-- thumbnails in same order -->
+              <button class="slideshow-thumb active" type="button">
+                <img
+                  src="images/xristina-Clouds-2023-50x50cm-avail-250eur.jpeg"
+                  alt="Clouds thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Grey-Hour-2024-20x40cm-avail-200eur.jpeg"
+                  alt="Grey Hour thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Path-Across-the-Field-2021-20x30cm-avail-80eur.jpeg"
+                  alt="Path Across the Field thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-River-2024-30x40cm-avail-100eur.jpeg"
+                  alt="River thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Thunder-2025-40x20cm-avail-120eur.jpeg"
+                  alt="Thunder thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Farm-House-2024-25x25cm-avail-80eur.jpeg"
+                  alt="Farm House thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
+                  alt="Where Frost Whispers thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-The-Sunset-of-Kuindzhi-2024-60x80cm-avail-300eur.jpeg"
+                  alt="The Sunset of Kuindzhi thumbnail"
+                />
+              </button>
+
+              <!-- sold thumbnails -->
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg"
+                  alt="Ghost of the Forest thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Savanna-Sunset-2024-30x40cm-SOLD-500eur.jpeg"
+                  alt="Savanna Sunset thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Golden-Sunset-2022-30x20cm-SOLD-100eur.jpeg"
+                  alt="Golden Sunset thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Pebble-Beach-7-Hole-2024-25x25cm-SOLD-60eur.jpeg"
+                  alt="Pebble Beach 7 Hole thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Cypress-2023-20x30cm-SOLD-90eur.jpeg"
+                  alt="Cypress thumbnail"
+                />
+              </button>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- ================= BIRCH SERIES ================= -->
+        <!-- BIRCH SERIES -->
+        <section id="birch" class="gallery-section fade-in">
+          <h2 data-i18n="gallery.birch_title">Birch Series</h2>
+          <p data-i18n="gallery.birch_desc">
+            A series of expressive birch paintings, focusing on rhythm, gesture
+            and colour.
+          </p>
 
-      <section class="section wrapper fade-in" id="birch">
-        <h2 data-i18n="gallery.birch_title">Birch Series</h2>
-        <p data-i18n="gallery.birch_desc">
-          A series of expressive birch paintings, focusing on rhythm, gesture and
-          colour.
-        </p>
+          <div class="slideshow" data-slideshow>
+            <div class="slideshow-main">
+              <div class="slide active">
+                <img
+                  src="images/xristina-Birch I-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch I, 90 × 50 cm, 2023"
+                />
+                <div class="slideshow-caption">
+                  <strong>Birch I</strong> — oil on canvas, 90 × 50 cm, 2023
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Birch II-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch II, 90 × 50 cm, 2023"
+                />
+                <div class="slideshow-caption">
+                  <strong>Birch II</strong> — oil on canvas, 90 × 50 cm, 2023
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Birch III-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch III, 90 × 50 cm, 2023"
+                />
+                <div class="slideshow-caption">
+                  <strong>Birch III</strong> — oil on canvas, 90 × 50 cm, 2023
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Birch IV-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch IV, 90 × 50 cm, 2023"
+                />
+                <div class="slideshow-caption">
+                  <strong>Birch IV</strong> — oil on canvas, 90 × 50 cm, 2023
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Birch V-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch V, 90 × 50 cm, 2023"
+                />
+                <div class="slideshow-caption">
+                  <strong>Birch V</strong> — oil on canvas, 90 × 50 cm, 2023
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Birch VI-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch VI, 90 × 50 cm, 2023"
+                />
+                <div class="slideshow-caption">
+                  <strong>Birch VI</strong> — oil on canvas, 90 × 50 cm, 2023
+                </div>
+              </div>
+              <div class="slide">
+                <img
+                  src="images/xristina-Birch VII-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch VII, 90 × 50 cm, 2023"
+                />
+                <div class="slideshow-caption">
+                  <strong>Birch VII</strong> — oil on canvas, 90 × 50 cm, 2023
+                </div>
+              </div>
 
-        <div class="slideshow" data-slideshow>
-          <div class="slideshow-main">
-            <div class="slide active">
-              <img
-                src="images/xristina-Birch I-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch I"
-              />
-              <div class="slideshow-caption">
-                <strong>Birch I</strong> — oil on canvas, 90 × 50 cm, 2023
+              <div class="slideshow-controls">
+                <button
+                  class="slideshow-btn"
+                  type="button"
+                  data-prev
+                  aria-label="Previous"
+                ></button>
+                <button
+                  class="slideshow-btn"
+                  type="button"
+                  data-next
+                  aria-label="Next"
+                ></button>
               </div>
             </div>
 
-            <div class="slide">
-              <img
-                src="images/xristina-Birch II-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch II"
-              />
-              <div class="slideshow-caption">
-                <strong>Birch II</strong> — oil on canvas, 90 × 50 cm, 2023
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Birch III-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch III"
-              />
-              <div class="slideshow-caption">
-                <strong>Birch III</strong> — oil on canvas, 90 × 50 cm, 2023
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Birch IV-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch IV"
-              />
-              <div class="slideshow-caption">
-                <strong>Birch IV</strong> — oil on canvas, 90 × 50 cm, 2023
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Birch V-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch V"
-              />
-              <div class="slideshow-caption">
-                <strong>Birch V</strong> — oil on canvas, 90 × 50 cm, 2023
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Birch VI-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch VI"
-              />
-              <div class="slideshow-caption">
-                <strong>Birch VI</strong> — oil on canvas, 90 × 50 cm, 2023
-              </div>
-            </div>
-
-            <div class="slide">
-              <img
-                src="images/xristina-Birch VII-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch VII"
-              />
-              <div class="slideshow-caption">
-                <strong>Birch VII</strong> — oil on canvas, 90 × 50 cm, 2023
-              </div>
-            </div>
-
-            <div class="slideshow-controls">
-              <button class="slideshow-btn" type="button" data-prev></button>
-              <button class="slideshow-btn" type="button" data-next></button>
+            <div class="slideshow-thumbs">
+              <button class="slideshow-thumb active" type="button">
+                <img
+                  src="images/xristina-Birch I-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch I thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Birch II-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch II thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Birch III-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch III thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Birch IV-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch IV thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Birch V-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch V thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Birch VI-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch VI thumbnail"
+                />
+              </button>
+              <button class="slideshow-thumb" type="button">
+                <img
+                  src="images/xristina-Birch VII-2023-90x50cm-avail-300eur.jpeg"
+                  alt="Birch VII thumbnail"
+                />
+              </button>
             </div>
           </div>
-
-          <div class="slideshow-thumbs">
-            <button class="slideshow-thumb active" type="button">
-              <img
-                src="images/xristina-Birch I-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch I thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Birch II-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch II thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Birch III-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch III thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Birch IV-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch IV thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Birch V-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch V thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Birch VI-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch VI thumbnail"
-              />
-            </button>
-            <button class="slideshow-thumb" type="button">
-              <img
-                src="images/xristina-Birch VII-2023-90x50cm-avail-300eur.jpeg"
-                alt="Birch VII thumbnail"
-              />
-            </button>
-          </div>
-        </div>
+        </section>
       </section>
     </main>
 
-    <!-- Lightbox for enlarged view -->
+    <!-- lightbox for zoom -->
     <div class="lightbox" id="lightbox">
       <button class="lightbox-close" type="button" aria-label="Close">×</button>
-      <img src="" alt="" id="lightbox-image" />
+      <img id="lightbox-image" src="" alt="" />
     </div>
 
     <button class="back-to-top" type="button" aria-label="Back to top">
