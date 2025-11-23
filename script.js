@@ -388,11 +388,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         const activeThumb = thumbs[index];
-        if (activeThumb && activeThumb.scrollIntoView) {
-          activeThumb.scrollIntoView({
-            behavior: "smooth",
-            block: "nearest",
-            inline: "center"
+        if (activeThumb) {
+          const container = activeThumb.parentElement;
+          const offset =
+            activeThumb.offsetLeft -
+            (container.clientWidth / 2 - activeThumb.clientWidth / 2);
+          container.scrollTo({
+            left: Math.max(0, offset),
+            behavior: "smooth"
           });
         }
       }
@@ -517,7 +520,11 @@ document.addEventListener("DOMContentLoaded", () => {
   // ===== Fade-in on scroll =====
 
   const fadeEls = document.querySelectorAll(".fade-in");
-  if ("IntersectionObserver" in window) {
+
+  // For safety: on Available page, force visible (avoid weird iOS bugs)
+  if (document.body.classList.contains("page-available")) {
+    fadeEls.forEach((el) => el.classList.add("visible"));
+  } else if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry) => {
