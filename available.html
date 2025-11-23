@@ -2,356 +2,567 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Available – Xristina</title>
+    <title>Available works – Xristina</title>
     <meta
       name="description"
-      content="Original oil paintings by Xristina currently available for purchase."
+      content="Original oil paintings by Xristina currently available, plus a selection of sold works."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body class="page-available">
     <header class="site-header">
       <div class="wrapper site-header-inner">
         <div class="brand">
-          <div class="brand-main">XRISTINA</div>
-          <div class="brand-sub">Oil painting • Belgium</div>
-        </div>
-        <nav class="site-nav">
-          <ul class="nav-links">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="available.html" class="active">Available</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <div class="language-switch">
-            <button type="button" class="lang-btn lang-active">EN</button>
-            <button type="button" class="lang-btn">FR</button>
-            <button type="button" class="lang-btn">NL</button>
+          <div class="brand-main">Xristina</div>
+          <div class="brand-sub" data-i18n="brand.sub">
+            Oil painting • Belgium
           </div>
-        </nav>
+        </div>
+        <div class="header-right">
+          <nav>
+            <ul class="nav-links">
+              <li>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+              </li>
+              <li>
+                <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+              </li>
+              <li>
+                <a
+                  href="available.html"
+                  class="active"
+                  data-i18n="nav.available"
+                  >Available</a
+                >
+              </li>
+              <li>
+                <a href="about.html" data-i18n="nav.about">About</a>
+              </li>
+              <li>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          </div>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="section wrapper fade-section section-first">
+      <!-- AVAILABLE WORKS -->
+      <section class="section wrapper fade-in">
         <div class="section-header">
-          <h1>Available works</h1>
-        </div>
-        <p class="available-intro">
-          Original oil paintings currently available. For details, framing
-          options or shipping, please get in touch via the
-          <a href="contact.html">contact form</a>.
-        </p>
-
-        <div class="available-filters">
-          <div class="filter-label">Filter by series</div>
-          <div class="filter-buttons">
-            <button
-              class="filter-btn active"
-              type="button"
-              data-filter-series="all"
-            >
-              All
-            </button>
-            <button
-              class="filter-btn"
-              type="button"
-              data-filter-series="still-life"
-            >
-              Still Life
-            </button>
-            <button
-              class="filter-btn"
-              type="button"
-              data-filter-series="landscapes"
-            >
-              Landscapes
-            </button>
-            <button
-              class="filter-btn"
-              type="button"
-              data-filter-series="birch"
-            >
-              Birch Series
-            </button>
-          </div>
+          <h1 data-i18n="available.title">Available works</h1>
+          <p data-i18n="available.intro">
+            Original oil paintings currently available. For details, framing
+            options or shipping, please get in touch via the contact form.
+          </p>
         </div>
 
-        <div class="available-grid">
+        <div class="filter-bar">
+          <span class="filter-label" data-i18n="available.filter_label"
+            >Filter by series</span
+          >
+          <button
+            type="button"
+            class="filter-btn active"
+            data-series-filter="all"
+            data-i18n="available.filter_all"
+          >
+            All
+          </button>
+          <button
+            type="button"
+            class="filter-btn"
+            data-series-filter="still-life"
+            data-i18n="gallery.stilllife_title"
+          >
+            Still Life
+          </button>
+          <button
+            type="button"
+            class="filter-btn"
+            data-series-filter="landscape"
+            data-i18n="gallery.landscapes_title"
+          >
+            Landscapes
+          </button>
+          <button
+            type="button"
+            class="filter-btn"
+            data-series-filter="birch"
+            data-i18n="gallery.birch_title"
+          >
+            Birch Series
+          </button>
+        </div>
+
+        <div class="gallery-grid">
           <!-- STILL LIFE -->
-          <article class="available-item" data-series="still-life">
+          <article class="gallery-item" data-series="still-life">
             <img
-              src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpg"
-              alt="Afternoon Tea – still life with samovar"
+              src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
+              alt="Afternoon Tea, 60 × 80 cm, 2024"
             />
-            <div class="available-item-title">Afternoon Tea</div>
-            <div class="available-item-meta">Oil on canvas, 60 × 80 cm, 2024</div>
-            <div class="available-item-price">€2,500</div>
+            <div class="work-title">Afternoon Tea</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 60 × 80 cm, 2024</span>
+              <span class="work-price">€ 2,500</span>
+            </div>
+            <a
+              href="contact.html?work=Afternoon%20Tea%20(60x80cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="still-life">
+          <article class="gallery-item" data-series="still-life">
             <img
-              src="images/xristina-Poppies-2024-60x40cm-avail-1500eur.jpg"
-              alt="Poppies – bouquet of red flowers"
+              src="images/xristina-Poppies-2024-60x40cm-avail-1500eur.jpeg"
+              alt="Poppies, 60 × 40 cm, 2024"
             />
-            <div class="available-item-title">Poppies</div>
-            <div class="available-item-meta">Oil on canvas, 60 × 40 cm, 2024</div>
-            <div class="available-item-price">€1,500</div>
+            <div class="work-title">Poppies</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 60 × 40 cm, 2024</span>
+              <span class="work-price">€ 1,500</span>
+            </div>
+            <a
+              href="contact.html?work=Poppies%20(60x40cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="still-life">
+          <article class="gallery-item" data-series="still-life">
             <img
-              src="images/xristina-Sunflowers-2024-80x60cm-avail-1200eur.jpg"
-              alt="Sunflowers – yellow flowers on blue"
+              src="images/xristina-Sunflowers-2024-80x60cm-avail-1200eur.jpeg"
+              alt="Sunflowers, 80 × 60 cm, 2024"
             />
-            <div class="available-item-title">Sunflowers</div>
-            <div class="available-item-meta">Oil on canvas, 80 × 60 cm, 2024</div>
-            <div class="available-item-price">€1,200</div>
+            <div class="work-title">Sunflowers</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 80 × 60 cm, 2024</span>
+              <span class="work-price">€ 1,200</span>
+            </div>
+            <a
+              href="contact.html?work=Sunflowers%20(80x60cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <!-- LANDSCAPES – frost placed a bit higher (after Sunflowers) -->
-          <article class="available-item" data-series="landscapes">
+          <!-- LANDSCAPES -->
+          <article class="gallery-item" data-series="landscape">
             <img
-              src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur.jpg"
-              alt="Where Frost Whispers – snow village landscape"
+              src="images/xristina-Clouds-2023-50x50cm-avail-250eur.jpeg"
+              alt="Clouds, 50 × 50 cm, 2023"
             />
-            <div class="available-item-title">Where Frost Whispers</div>
-            <div class="available-item-meta">Oil on canvas, 60 × 80 cm, 2024</div>
-            <div class="available-item-price">€1,800</div>
+            <div class="work-title">Clouds</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 50 × 50 cm, 2023</span>
+              <span class="work-price">€ 250</span>
+            </div>
+            <a
+              href="contact.html?work=Clouds%20(50x50cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="landscapes">
+          <article class="gallery-item" data-series="landscape">
             <img
-              src="images/xristina-Clouds-2023-50x50cm-avail-250eur.jpg"
-              alt="Clouds over sand dunes"
+              src="images/xristina-Grey-Hour-2024-20x40cm-avail-200eur.jpeg"
+              alt="Grey Hour, 20 × 40 cm, 2024"
             />
-            <div class="available-item-title">Clouds</div>
-            <div class="available-item-meta">Oil on canvas, 50 × 50 cm, 2023</div>
-            <div class="available-item-price">€250</div>
+            <div class="work-title">Grey Hour</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 20 × 40 cm, 2024</span>
+              <span class="work-price">€ 200</span>
+            </div>
+            <a
+              href="contact.html?work=Grey%20Hour%20(20x40cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="landscapes">
+          <article class="gallery-item" data-series="landscape">
             <img
-              src="images/xristina-Farm-House-2024-25x25cm-avail-80eur.jpg"
-              alt="Farm House – cows in a field"
+              src="images/xristina-Path-Across-the-Field-2021-20x30cm-avail-80eur.jpeg"
+              alt="Path Across the Field, 20 × 30 cm, 2021"
             />
-            <div class="available-item-title">Farm House</div>
-            <div class="available-item-meta">Oil on canvas, 25 × 25 cm, 2024</div>
-            <div class="available-item-price">€80</div>
+            <div class="work-title">Path Across the Field</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 20 × 30 cm, 2021</span>
+              <span class="work-price">€ 80</span>
+            </div>
+            <a
+              href="contact.html?work=Path%20Across%20the%20Field%20(20x30cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="landscapes">
+          <article class="gallery-item" data-series="landscape">
             <img
-              src="images/xristina-Grey-Hour-2024-20x40cm-avail-200eur.jpg"
-              alt="Grey Hour – solitary tree under grey sky"
+              src="images/xristina-River-2024-30x40cm-avail-100eur.jpeg"
+              alt="River, 30 × 40 cm, 2024"
             />
-            <div class="available-item-title">Grey Hour</div>
-            <div class="available-item-meta">Oil on canvas, 20 × 40 cm, 2024</div>
-            <div class="available-item-price">€200</div>
+            <div class="work-title">River</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 30 × 40 cm, 2024</span>
+              <span class="work-price">€ 100</span>
+            </div>
+            <a
+              href="contact.html?work=River%20(30x40cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="landscapes">
+          <article class="gallery-item" data-series="landscape">
             <img
-              src="images/xristina-Path-Across-the-Field-2021-20x30cm-avail-80eur.jpg"
-              alt="Path Across the Field"
+              src="images/xristina-Thunder-2025-40x20cm-avail-120eur.jpeg"
+              alt="Thunder, 40 × 20 cm, 2025"
             />
-            <div class="available-item-title">Path Across the Field</div>
-            <div class="available-item-meta">Oil on canvas, 20 × 30 cm, 2021</div>
-            <div class="available-item-price">€80</div>
+            <div class="work-title">
+              Thunder <span class="badge-new" data-i18n="badge.new">New</span>
+            </div>
+            <div class="work-meta">
+              <span>Oil on canvas, 40 × 20 cm, 2025</span>
+              <span class="work-price">€ 120</span>
+            </div>
+            <a
+              href="contact.html?work=Thunder%20(40x20cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="landscapes">
+          <article class="gallery-item" data-series="landscape">
             <img
-              src="images/xristina-River-2024-30x40cm-avail-100eur.jpg"
-              alt="River – autumn landscape"
+              src="images/xristina-Farm-House-2024-25x25cm-avail-80eur.jpeg"
+              alt="Farm House, 25 × 25 cm, 2024"
             />
-            <div class="available-item-title">River</div>
-            <div class="available-item-meta">Oil on canvas, 30 × 40 cm, 2024</div>
-            <div class="available-item-price">€100</div>
+            <div class="work-title">Farm House</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 25 × 25 cm, 2024</span>
+              <span class="work-price">€ 80</span>
+            </div>
+            <a
+              href="contact.html?work=Farm%20House%20(25x25cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="landscapes">
+          <article class="gallery-item" data-series="landscape">
             <img
-              src="images/xristina-Thunder-2025-40x20cm-avail-120eur.jpg"
-              alt="Thunder – yellow field with dark sky"
+              src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
+              alt="Where Frost Whispers, 60 × 80 cm, 2024"
             />
-            <div class="available-item-title">Thunder</div>
-            <div class="available-item-meta">Oil on canvas, 40 × 20 cm, 2025</div>
-            <div class="available-item-price">€120</div>
+            <div class="work-title">
+              Where Frost Whispers
+              <span class="badge-new" data-i18n="badge.new">New</span>
+            </div>
+            <div class="work-meta">
+              <span>Oil on canvas, 60 × 80 cm, 2024</span>
+              <span class="work-price">€ 1,800</span>
+            </div>
+            <a
+              href="contact.html?work=Where%20Frost%20Whispers%20(60x80cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="landscapes">
+          <article class="gallery-item" data-series="landscape">
             <img
-              src="images/xristina-The-Sunset-of-Kuindzhi-2024-60x80cm-avail-300eur.jpg"
-              alt="The Sunset of Kuindzhi – stylised sunset"
+              src="images/xristina-The-Sunset-of-Kuindzhi-2024-60x80cm-avail-300eur.jpeg"
+              alt="The Sunset of Kuindzhi, 60 × 80 cm, 2024"
             />
-            <div class="available-item-title">The Sunset of Kuindzhi</div>
-            <div class="available-item-meta">Oil on canvas, 60 × 80 cm, 2024</div>
-            <div class="available-item-price">€300</div>
+            <div class="work-title">The Sunset of Kuindzhi</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 60 × 80 cm, 2024</span>
+              <span class="work-price">€ 300</span>
+            </div>
+            <a
+              href="contact.html?work=The%20Sunset%20of%20Kuindzhi%20(60x80cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <!-- BIRCH -->
-
-          <article class="available-item" data-series="birch">
+          <!-- BIRCH SERIES -->
+          <article class="gallery-item" data-series="birch">
             <img
-              src="images/xristina-Birch I-2023-90x50cm-avail-300eur.jpg"
-              alt="Birch I"
+              src="images/xristina-Birch I-2023-90x50cm-avail-300eur.jpeg"
+              alt="Birch I, 90 × 50 cm, 2023"
             />
-            <div class="available-item-title">Birch I</div>
-            <div class="available-item-meta">Oil on canvas, 90 × 50 cm, 2023</div>
-            <div class="available-item-price">€300</div>
+            <div class="work-title">Birch I</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 90 × 50 cm, 2023</span>
+              <span class="work-price">€ 300</span>
+            </div>
+            <a
+              href="contact.html?work=Birch%20I%20(90x50cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="birch">
+          <article class="gallery-item" data-series="birch">
             <img
-              src="images/xristina-Birch II-2023-90x50cm-avail-300eur.jpg"
-              alt="Birch II"
+              src="images/xristina-Birch II-2023-90x50cm-avail-300eur.jpeg"
+              alt="Birch II, 90 × 50 cm, 2023"
             />
-            <div class="available-item-title">Birch II</div>
-            <div class="available-item-meta">Oil on canvas, 90 × 50 cm, 2023</div>
-            <div class="available-item-price">€300</div>
+            <div class="work-title">Birch II</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 90 × 50 cm, 2023</span>
+              <span class="work-price">€ 300</span>
+            </div>
+            <a
+              href="contact.html?work=Birch%20II%20(90x50cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="birch">
+          <article class="gallery-item" data-series="birch">
             <img
-              src="images/xristina-Birch III-2023-90x50cm-avail-300eur.jpg"
-              alt="Birch III"
+              src="images/xristina-Birch III-2023-90x50cm-avail-300eur.jpeg"
+              alt="Birch III, 90 × 50 cm, 2023"
             />
-            <div class="available-item-title">Birch III</div>
-            <div class="available-item-meta">Oil on canvas, 90 × 50 cm, 2023</div>
-            <div class="available-item-price">€300</div>
+            <div class="work-title">Birch III</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 90 × 50 cm, 2023</span>
+              <span class="work-price">€ 300</span>
+            </div>
+            <a
+              href="contact.html?work=Birch%20III%20(90x50cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="birch">
+          <article class="gallery-item" data-series="birch">
             <img
-              src="images/xristina-Birch IV-2023-90x50cm-avail-300eur.jpg"
-              alt="Birch IV"
+              src="images/xristina-Birch IV-2023-90x50cm-avail-300eur.jpeg"
+              alt="Birch IV, 90 × 50 cm, 2023"
             />
-            <div class="available-item-title">Birch IV</div>
-            <div class="available-item-meta">Oil on canvas, 90 × 50 cm, 2023</div>
-            <div class="available-item-price">€300</div>
+            <div class="work-title">Birch IV</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 90 × 50 cm, 2023</span>
+              <span class="work-price">€ 300</span>
+            </div>
+            <a
+              href="contact.html?work=Birch%20IV%20(90x50cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="birch">
+          <article class="gallery-item" data-series="birch">
             <img
-              src="images/xristina-Birch V-2023-90x50cm-avail-300eur.jpg"
-              alt="Birch V"
+              src="images/xristina-Birch V-2023-90x50cm-avail-300eur.jpeg"
+              alt="Birch V, 90 × 50 cm, 2023"
             />
-            <div class="available-item-title">Birch V</div>
-            <div class="available-item-meta">Oil on canvas, 90 × 50 cm, 2023</div>
-            <div class="available-item-price">€300</div>
+            <div class="work-title">Birch V</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 90 × 50 cm, 2023</span>
+              <span class="work-price">€ 300</span>
+            </div>
+            <a
+              href="contact.html?work=Birch%20V%20(90x50cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="birch">
+          <article class="gallery-item" data-series="birch">
             <img
-              src="images/xristina-Birch VI-2023-90x50cm-avail-300eur.jpg"
-              alt="Birch VI"
+              src="images/xristina-Birch VI-2023-90x50cm-avail-300eur.jpeg"
+              alt="Birch VI, 90 × 50 cm, 2023"
             />
-            <div class="available-item-title">Birch VI</div>
-            <div class="available-item-meta">Oil on canvas, 90 × 50 cm, 2023</div>
-            <div class="available-item-price">€300</div>
+            <div class="work-title">Birch VI</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 90 × 50 cm, 2023</span>
+              <span class="work-price">€ 300</span>
+            </div>
+            <a
+              href="contact.html?work=Birch%20VI%20(90x50cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
           </article>
 
-          <article class="available-item" data-series="birch">
+          <article class="gallery-item" data-series="birch">
             <img
-              src="images/xristina-Birch VII-2023-90x50cm-avail-300eur.jpg"
-              alt="Birch VII"
+              src="images/xristina-Birch VII-2023-90x50cm-avail-300eur.jpeg"
+              alt="Birch VII, 90 × 50 cm, 2023"
             />
-            <div class="available-item-title">Birch VII</div>
-            <div class="available-item-meta">Oil on canvas, 90 × 50 cm, 2023</div>
-            <div class="available-item-price">€300</div>
+            <div class="work-title">Birch VII</div>
+            <div class="work-meta">
+              <span>Oil on canvas, 90 × 50 cm, 2023</span>
+              <span class="work-price">€ 300</span>
+            </div>
+            <a
+              href="contact.html?work=Birch%20VII%20(90x50cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
+          </article>
+        </div>
+      </section>
+
+      <!-- SOLD WORKS -->
+      <section class="section wrapper fade-in">
+        <div class="section-header">
+          <h2 data-i18n="available.sold_title">Sold works</h2>
+          <p data-i18n="available.sold_intro">
+            A selection of paintings that have already found their homes.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <article class="gallery-item" data-series="landscape">
+            <img
+              src="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg"
+              alt="Ghost of the Forest, 60 × 80 cm, 2024 (sold)"
+            />
+            <div class="work-title">
+              Ghost of the Forest
+              <span class="badge-sold" data-i18n="badge.sold">Sold</span>
+            </div>
+            <div class="work-meta">
+              <span>Oil on canvas, 60 × 80 cm, 2024</span>
+              <span class="work-price">€ 1,100</span>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-series="landscape">
+            <img
+              src="images/xristina-Savanna-Sunset-2024-30x40cm-SOLD-500eur.jpeg"
+              alt="Savanna Sunset, 30 × 40 cm, 2024 (sold)"
+            />
+            <div class="work-title">
+              Savanna Sunset
+              <span class="badge-sold" data-i18n="badge.sold">Sold</span>
+            </div>
+            <div class="work-meta">
+              <span>Oil on canvas, 30 × 40 cm, 2024</span>
+              <span class="work-price">€ 500</span>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-series="landscape">
+            <img
+              src="images/xristina-Golden-Sunset-2022-30x20cm-SOLD-100eur.jpeg"
+              alt="Golden Sunset, 30 × 20 cm, 2022 (sold)"
+            />
+            <div class="work-title">
+              Golden Sunset
+              <span class="badge-sold" data-i18n="badge.sold">Sold</span>
+            </div>
+            <div class="work-meta">
+              <span>Oil on canvas, 30 × 20 cm, 2022</span>
+              <span class="work-price">€ 100</span>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-series="landscape">
+            <img
+              src="images/xristina-Pebble-Beach-7-Hole-2024-25x25cm-SOLD-60eur.jpeg"
+              alt="Pebble Beach 7 Hole, 25 × 25 cm, 2024 (sold)"
+            />
+            <div class="work-title">
+              Pebble Beach 7 Hole
+              <span class="badge-sold" data-i18n="badge.sold">Sold</span>
+            </div>
+            <div class="work-meta">
+              <span>Oil on canvas, 25 × 25 cm, 2024</span>
+              <span class="work-price">€ 60</span>
+            </div>
+          </article>
+
+          <article class="gallery-item" data-series="landscape">
+            <img
+              src="images/xristina-Cypress-2023-20x30cm-SOLD-90eur.jpeg"
+              alt="Cypress, 20 × 30 cm, 2023 (sold)"
+            />
+            <div class="work-title">
+              Cypress
+              <span class="badge-sold" data-i18n="badge.sold">Sold</span>
+            </div>
+            <div class="work-meta">
+              <span>Oil on canvas, 20 × 30 cm, 2023</span>
+              <span class="work-price">€ 90</span>
+            </div>
           </article>
         </div>
 
-        <!-- SOLD WORKS -->
-
-        <h2 class="sold-section-title">Sold works</h2>
-        <p class="available-intro">
-          A few of the paintings that have already found a home. Framing can be
-          arranged for new works on request.
-        </p>
-
-        <div class="available-grid">
-          <article class="available-item" data-series="still-life">
-            <img
-              src="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpg"
-              alt="Ghost of the Forest – egret in dark forest"
-            />
-            <div class="available-item-title">Ghost of the Forest</div>
-            <div class="available-item-meta">Oil on canvas, 60 × 80 cm, 2024</div>
-            <div class="available-item-price price-sold">
-              €1,100<span class="sold-pill">Sold</span>
-            </div>
-          </article>
-
-          <article class="available-item" data-series="landscapes">
-            <img
-              src="images/xristina-Savanna-Sunset-2024-30x40cm-SOLD-500eur.jpg"
-              alt="Savanna Sunset – mountains in warm light"
-            />
-            <div class="available-item-title">Savanna Sunset</div>
-            <div class="available-item-meta">Oil on canvas, 30 × 40 cm, 2024</div>
-            <div class="available-item-price price-sold">
-              €500<span class="sold-pill">Sold</span>
-            </div>
-          </article>
-
-          <article class="available-item" data-series="landscapes">
-            <img
-              src="images/xristina-Cypress-2023-20x30cm-SOLD-90eur.jpg"
-              alt="Cypress – small landscape with river"
-            />
-            <div class="available-item-title">Cypress</div>
-            <div class="available-item-meta">Oil on board, 20 × 30 cm, 2023</div>
-            <div class="available-item-price price-sold">
-              €90<span class="sold-pill">Sold</span>
-            </div>
-          </article>
-
-          <article class="available-item" data-series="landscapes">
-            <img
-              src="images/xristina-Golden-Sunset-2022-30x20cm-SOLD-100eur.jpg"
-              alt="Golden Sunset – small mountain sunset"
-            />
-            <div class="available-item-title">Golden Sunset</div>
-            <div class="available-item-meta">Oil on canvas, 30 × 20 cm, 2022</div>
-            <div class="available-item-price price-sold">
-              €100<span class="sold-pill">Sold</span>
-            </div>
-          </article>
-
-          <article class="available-item" data-series="landscapes">
-            <img
-              src="images/xristina-Pebble-Beach-7-Hole-2024-25x25cm-SOLD-60eur.jpg"
-              alt="Pebble Beach, 7th Hole – seascape with golf course"
-            />
-            <div class="available-item-title">
-              Pebble Beach, 7th Hole
-            </div>
-            <div class="available-item-meta">Oil on canvas, 25 × 25 cm, 2024</div>
-            <div class="available-item-price price-sold">
-              €60<span class="sold-pill">Sold</span>
-            </div>
-          </article>
+        <div class="available-faq">
+          <div class="available-faq-item">
+            <h3 data-i18n="available.faq_shipping_q">Shipping</h3>
+            <p data-i18n="available.faq_shipping_a">
+              Works are shipped from Belgium. Packing is done carefully and
+              tracked shipping is available worldwide.
+            </p>
+          </div>
+          <div class="available-faq-item">
+            <h3 data-i18n="available.faq_framing_q">Framing</h3>
+            <p data-i18n="available.faq_framing_a">
+              Paintings are sold unframed by default, but framing can be arranged
+              and added to the price on request.
+            </p>
+          </div>
+          <div class="available-faq-item">
+            <h3 data-i18n="available.faq_payment_q">Payment</h3>
+            <p data-i18n="available.faq_payment_a">
+              Bank transfer and common European payment methods can be arranged
+              after we confirm the work and shipping.
+            </p>
+          </div>
         </div>
       </section>
     </main>
 
+    <button class="back-to-top" type="button" aria-label="Back to top">
+      ↑
+    </button>
+
     <footer class="site-footer">
-      © <span id="year-available"></span> Xristina — All rights reserved.
+      © <span id="year"></span> Xristina —
+      <span data-i18n="footer.rights">All rights reserved.</span>
     </footer>
-
-    <div class="lightbox" aria-hidden="true">
-      <button class="lightbox-close" aria-label="Close image">×</button>
-      <img src="" alt="Artwork enlarged" />
-    </div>
-
-    <script>
-      document.getElementById("year-available").textContent =
-        new Date().getFullYear();
-    </script>
   </body>
 </html>
