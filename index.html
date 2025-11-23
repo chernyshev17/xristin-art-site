@@ -2,125 +2,143 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Home – Xristina</title>
+    <title>Xristina – Oil painting</title>
     <meta
       name="description"
-      content="Oil paintings by Xristina – still life, landscapes and birch series."
+      content="Oil paintings by Xristina – still lifes, landscapes and the birch series, based in Belgium."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body class="page-home">
     <header class="site-header">
       <div class="wrapper site-header-inner">
         <div class="brand">
-          <div class="brand-main">XRISTINA</div>
-          <div class="brand-sub">Oil painting • Belgium</div>
-        </div>
-        <nav class="site-nav">
-          <ul class="nav-links">
-            <li><a href="index.html" class="active">Home</a></li>
-            <li><a href="gallery.html">Gallery</a></li>
-            <li><a href="available.html">Available</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-          <div class="language-switch">
-            <button type="button" class="lang-btn lang-active">EN</button>
-            <button type="button" class="lang-btn">FR</button>
-            <button type="button" class="lang-btn">NL</button>
+          <div class="brand-main">Xristina</div>
+          <div class="brand-sub" data-i18n="brand.sub">
+            Oil painting • Belgium
           </div>
-        </nav>
+        </div>
+        <div class="header-right">
+          <nav>
+            <ul class="nav-links">
+              <li>
+                <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+              </li>
+              <li>
+                <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="available.html" data-i18n="nav.available">Available</a>
+              </li>
+              <li>
+                <a href="about.html" data-i18n="nav.about">About</a>
+              </li>
+              <li>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          </div>
+        </div>
       </div>
     </header>
 
     <main>
-      <section class="hero wrapper fade-section section-first">
-        <div class="hero-image">
-          <img
-            src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpg"
-            alt="Afternoon Tea – still life with samovar"
-          />
-        </div>
-        <div>
-          <div class="hero-tagline">Oil paintings on canvas</div>
-          <h1 class="hero-title">Warm light, quiet stories.</h1>
-          <p class="hero-text">
-            Still lifes with tea and lace, quiet fields under heavy clouds, and
-            a contemporary birch series painted with a palette knife. Oil
-            paintings created in Belgium, with roots in Eastern European
-            tradition.
+      <!-- HERO -->
+      <section class="hero wrapper fade-in">
+        <div class="hero-text">
+          <div class="hero-tagline" data-i18n="home.hero_tagline">
+            Oil paintings on canvas
+          </div>
+          <h1 class="hero-title" data-i18n="home.hero_title">
+            Quiet light, fields and flowers.
+          </h1>
+          <p class="hero-text-main" data-i18n="home.hero_text">
+            Kristina paints still lifes and landscapes in oil, with a focus on
+            atmosphere, silence and slow looking.
           </p>
           <div class="hero-actions">
-            <a href="gallery.html" class="button">View gallery</a>
-            <a href="available.html" class="button secondary">Available works</a>
+            <a href="gallery.html" class="button" data-i18n="home.hero_cta_gallery">
+              View gallery
+            </a>
+            <a
+              href="available.html"
+              class="button secondary"
+              data-i18n="home.hero_cta_available"
+            >
+              Available works
+            </a>
           </div>
+        </div>
+        <div class="hero-image" data-hero-slideshow>
+          <img
+            src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
+            alt="Afternoon Tea painting"
+            class="hero-slide active"
+          />
+          <img
+            src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
+            alt="Where Frost Whispers painting"
+            class="hero-slide"
+          />
+          <img
+            src="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg"
+            alt="Ghost of the Forest painting"
+            class="hero-slide"
+          />
         </div>
       </section>
 
-      <section class="section wrapper fade-section">
+      <!-- SERIES OVERVIEW -->
+      <section class="section wrapper fade-in">
         <div class="section-header">
-          <h2>Series</h2>
-          <p>
-            Three bodies of work that speak to each other: intimate still life,
-            open landscapes, and a more abstract birch series.
-          </p>
+          <h2 data-i18n="home.series_title">Series</h2>
         </div>
-
         <div class="series-grid">
-          <article class="series-card">
-            <img
-              src="images/xristina-Poppies-2024-60x40cm-avail-1500eur.jpg"
-              alt="Poppies – still life with flowers"
-            />
-            <div class="series-card-title">Still Life</div>
-            <p class="series-card-text">
-              Teapots, lace, flowers and sweets – rich classical still lifes
-              painted from life with attention to texture and light.
+          <a href="gallery.html#still-life" class="series-card">
+            <h3 data-i18n="series.stilllife_title">Still Life</h3>
+            <p data-i18n="series.stilllife_text">
+              Tabletop scenes with tea, flowers and glass, painted in layered,
+              muted colours.
             </p>
-          </article>
-
-          <article class="series-card">
-            <img
-              src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur.jpg"
-              alt="Where Frost Whispers – snow landscape"
-            />
-            <div class="series-card-title">Landscapes</div>
-            <p class="series-card-text">
-              Fields, rivers and distant mountains, from quiet grey hours to
-              blazing Kuindzhi-inspired sunsets.
+          </a>
+          <a href="gallery.html#landscapes" class="series-card">
+            <h3 data-i18n="series.landscapes_title">Landscapes</h3>
+            <p data-i18n="series.landscapes_text">
+              Fields, paths and distant trees, often in the soft grey light of
+              the North.
             </p>
-          </article>
-
-          <article class="series-card">
-            <img
-              src="images/xristina-Birch I-2023-90x50cm-avail-300eur.jpg"
-              alt="Birch I – abstract birch trunk"
-            />
-            <div class="series-card-title">Birch Series</div>
-            <p class="series-card-text">
-              A contemporary series of birch trunks painted with a knife: bold
-              colour fields, strong texture, and simple graphic rhythm.
+          </a>
+          <a href="gallery.html#birch" class="series-card">
+            <h3 data-i18n="series.birch_title">Birch Series</h3>
+            <p data-i18n="series.birch_text">
+              Seven expressive birch paintings, focused on rhythm, trunk and
+              colour.
             </p>
-          </article>
+          </a>
         </div>
       </section>
     </main>
 
+    <button class="back-to-top" type="button" aria-label="Back to top">
+      ↑
+    </button>
+
     <footer class="site-footer">
-      © <span id="year-home"></span> Xristina — All rights reserved.
+      © <span id="year"></span> Xristina —
+      <span data-i18n="footer.rights">All rights reserved.</span>
     </footer>
-
-    <!-- shared lightbox -->
-    <div class="lightbox" aria-hidden="true">
-      <button class="lightbox-close" aria-label="Close image">×</button>
-      <img src="" alt="Artwork enlarged" />
-    </div>
-
-    <script>
-      document.getElementById("year-home").textContent =
-        new Date().getFullYear();
-    </script>
   </body>
 </html>
