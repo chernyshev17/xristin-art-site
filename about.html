@@ -1,87 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8" />
-  <title>About – Xristin</title>
-  <meta
-    name="description"
-    content="About Xristina, an artist based in Leuven, working primarily with oil on canvas."
-  />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
-    rel="stylesheet"
-  />
-  <link rel="stylesheet" href="styles.css" />
-  <script src="script.js" defer></script>
-</head>
-  <body>
+    <meta charset="UTF-8" />
+    <title>About – Xristina</title>
+    <meta
+      name="description"
+      content="About artist Xristina – oil painter working with still lifes and landscapes, based in Belgium."
+    />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body class="page-about">
     <header class="site-header">
-  <div class="wrapper site-header-inner">
-    <div class="brand">
-      <div class="brand-main">Xristina</div>
-      <div class="brand-sub">Oil painting • Belgium</div>
-    </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="available.html">Available</a></li>
-        <li><a href="about.html" class="active">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
+      <div class="wrapper site-header-inner">
+        <div class="brand">
+          <div class="brand-main">Xristina</div>
+          <div class="brand-sub" data-i18n="brand.sub">
+            Oil painting • Belgium
+          </div>
+        </div>
+        <div class="header-right">
+          <nav>
+            <ul class="nav-links">
+              <li>
+                <a href="index.html" data-i18n="nav.home">Home</a>
+              </li>
+              <li>
+                <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="available.html" data-i18n="nav.available">Available</a>
+              </li>
+              <li>
+                <a href="about.html" class="active" data-i18n="nav.about"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <main>
-      <section class="section wrapper">
+      <section class="section wrapper fade-in">
         <div class="section-header">
-          <h1>About</h1>
+          <h1 data-i18n="about.title">About</h1>
         </div>
 
         <div class="about-layout">
           <div class="about-photo">
-            <!-- Replace portrait.jpg with a photo of yourself or your studio -->
-            <img src="images/portrait.jpg" alt="Portrait of the artist" />
+            <!-- later you can replace this with a studio/portrait photo -->
+            <img
+              src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
+              alt="Studio detail with painting"
+            />
           </div>
-
           <div class="about-text">
-            <p>
-              I am Kristina (Христина), an artist currently based in Leuven,
-              Belgium. I work primarily in oil on canvas, with a focus on quiet,
-              intimate interiors and fragments of everyday life.
+            <p data-i18n="about.text_1">
+              Kristina (Xristina) is an artist working primarily in oil
+              painting, currently based in Belgium.
             </p>
-            <p>
-              My paintings often return to the same objects, corners and light
-              sources — a chair, a window, a tablecloth — tracing how they
-              change with time, mood and memory. Colour and atmosphere are as
-              important to me as the subject itself.
+            <p data-i18n="about.text_2">
+              Her work moves between still lifes and landscapes: tables laid for
+              tea, flowers in vases, quiet fields and winter skies.
             </p>
-            <p>
-              Originally from [your origin, if you wish to mention], I studied
-              [any studies, or “I am self-taught”] and have been developing this
-              body of work over the past years while living in different cities.
+            <p data-i18n="about.text_3">
+              Originally from Russia, she now lives and paints in Belgium,
+              bringing together memories of one place with the light and weather
+              of another.
             </p>
-            <p>
-              This site presents a selection of works. For available pieces,
-              commissions or collaborations, please feel free to reach out via
-              the contact page.
+            <p data-i18n="about.text_4">
+              The paintings are built in layers, often over many sessions,
+              allowing colour and texture to slowly accumulate.
             </p>
+
+            <h2 data-i18n="about.timeline_title">Selected moments</h2>
+            <ul class="about-timeline">
+              <li data-i18n="about.timeline_item1">
+                2021 – First landscape series, small works on paper and canvas.
+              </li>
+              <li data-i18n="about.timeline_item2">
+                2023 – Start of the Birch Series, a group of seven vertical tree
+                paintings.
+              </li>
+              <li data-i18n="about.timeline_item3">
+                2024 – Still life paintings with tea, flowers and glass become a
+                recurring motif.
+              </li>
+              <li data-i18n="about.timeline_item4">
+                2025 – New work focusing on winter horizons and muted colour.
+              </li>
+            </ul>
           </div>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      © <span id="year"></span> Xristin — All rights reserved.
-    </footer>
+    <button class="back-to-top" type="button" aria-label="Back to top">
+      ↑
+    </button>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <footer class="site-footer">
+      © <span id="year"></span> Xristina —
+      <span data-i18n="footer.rights">All rights reserved.</span>
+    </footer>
   </body>
 </html>
