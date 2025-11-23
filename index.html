@@ -2,70 +2,152 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>Xristina – Oil Painter</title>
+    <title>Xristina – Oil painting</title>
     <meta
       name="description"
-      content="Xristina is an oil painter based in Leuven, Belgium. Intimate, atmospheric works in oil on canvas."
+      content="Oil paintings by Xristina – still lifes, landscapes and the birch series, based in Belgium."
     />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link
-  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
-  rel="stylesheet"
-/>
-<link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <script src="script.js" defer></script>
   </head>
-  <body>
+  <body class="page-home">
     <header class="site-header">
-  <div class="wrapper site-header-inner">
-    <div class="brand">
-      <div class="brand-main">Xristina</div>
-      <div class="brand-sub">Oil painting • Belgium</div>
-    </div>
-    <nav>
-      <ul class="nav-links">
-        <li><a href="index.html" class="active">Home</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="available.html">Available</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
+      <div class="wrapper site-header-inner">
+        <div class="brand">
+          <div class="brand-main">Xristina</div>
+          <div class="brand-sub" data-i18n="brand.sub">
+            Oil painting • Belgium
+          </div>
+        </div>
+        <div class="header-right">
+          <nav>
+            <ul class="nav-links">
+              <li>
+                <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+              </li>
+              <li>
+                <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
+              </li>
+              <li>
+                <a href="available.html" data-i18n="nav.available">Available</a>
+              </li>
+              <li>
+                <a href="about.html" data-i18n="nav.about">About</a>
+              </li>
+              <li>
+                <a href="contact.html" data-i18n="nav.contact">Contact</a>
+              </li>
+            </ul>
+          </nav>
+          <div class="lang-switcher">
+            <button type="button" class="lang-btn" data-lang="en">EN</button>
+            <button type="button" class="lang-btn" data-lang="fr">FR</button>
+            <button type="button" class="lang-btn" data-lang="nl">NL</button>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <main>
+      <!-- HERO -->
       <section class="hero wrapper">
-        <div class="hero-image">
-          <!-- Replace hero.jpg with one of your works -->
-          <img src="images/hero.jpeg" alt="Frost by Xristina" />
-        </div>
-
-        <div>
-          <div class="hero-tagline">Oil on canvas</div>
-          <h1 class="hero-title">Quiet, intimate spaces in colour and light.</h1>
-          <p class="hero-text">
-            I am Kristina (Христина), an artist based in Leuven, working
-            primarily in oil on canvas. My paintings explore stillness, memory
-            and the traces of everyday life.
+        <div class="hero-text fade-in">
+          <div class="hero-tagline" data-i18n="home.hero_tagline">
+            Oil paintings on canvas
+          </div>
+          <h1 class="hero-title" data-i18n="home.hero_title">
+            Quiet light, fields and flowers.
+          </h1>
+          <p class="hero-text-main" data-i18n="home.hero_text">
+            Kristina paints still lifes and landscapes in oil, with a focus on
+            atmosphere, silence and slow looking.
           </p>
           <div class="hero-actions">
-            <a href="gallery.html" class="button">View works</a>
-            <a href="contact.html" class="button secondary">Enquiries</a>
+            <a href="gallery.html" class="button" data-i18n="home.hero_cta_gallery">
+              View gallery
+            </a>
+            <a
+              href="available.html"
+              class="button secondary"
+              data-i18n="home.hero_cta_available"
+            >
+              Available works
+            </a>
           </div>
+        </div>
+        <div class="hero-image fade-in" data-hero-slideshow>
+          <img
+            src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
+            alt="Afternoon Tea painting"
+            class="hero-slide active"
+          />
+          <img
+            src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
+            alt="Where Frost Whispers painting"
+            class="hero-slide"
+          />
+          <img
+            src="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg"
+            alt="Ghost of the Forest painting"
+            class="hero-slide"
+          />
+        </div>
+      </section>
+
+      <!-- CURRENT FOCUS -->
+      <section class="section wrapper fade-in">
+        <h2 data-i18n="home.current_focus_title">Current focus</h2>
+        <p data-i18n="home.current_focus_text">
+          Recently, the work has been circling around afternoon table scenes,
+          winter horizons and the thin line between comfort and unease.
+        </p>
+      </section>
+
+      <!-- SERIES OVERVIEW -->
+      <section class="section wrapper fade-in">
+        <div class="section-header">
+          <h2 data-i18n="home.series_title">Series</h2>
+        </div>
+        <div class="series-grid">
+          <a href="gallery.html#still-life" class="series-card">
+            <h3 data-i18n="series.stilllife_title">Still Life</h3>
+            <p data-i18n="series.stilllife_text">
+              Tabletop scenes with tea, flowers and glass, painted in layered,
+              muted colours.
+            </p>
+          </a>
+          <a href="gallery.html#landscapes" class="series-card">
+            <h3 data-i18n="series.landscapes_title">Landscapes</h3>
+            <p data-i18n="series.landscapes_text">
+              Fields, paths and distant trees, often in the soft grey light of
+              the North.
+            </p>
+          </a>
+          <a href="gallery.html#birch" class="series-card">
+            <h3 data-i18n="series.birch_title">Birch Series</h3>
+            <p data-i18n="series.birch_text">
+              Seven expressive birch paintings, focused on rhythm, trunk and
+              colour.
+            </p>
+          </a>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer">
-      © <span id="year"></span> Xristin — All rights reserved.
-    </footer>
+    <button class="back-to-top" type="button" aria-label="Back to top">
+      ↑
+    </button>
 
-    <script>
-      // Simple dynamic year in footer
-      document.getElementById("year").textContent = new Date().getFullYear();
-    </script>
+    <footer class="site-footer">
+      © <span id="year"></span> Xristina —
+      <span data-i18n="footer.rights">All rights reserved.</span>
+    </footer>
   </body>
 </html>
