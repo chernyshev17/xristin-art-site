@@ -306,7 +306,7 @@ document.addEventListener("DOMContentLoaded", () => {
       "contact.side_text_1":
         "Gebaseerd in Belgi\u00eb, werkt voornamelijk met olieverf op doek.",
       "contact.side_text_2":
-        "Als u ge\u00efnteresseerd bent in een specifiek schilderij, vermeld dan graag de titel en het formaat.",
+        "Als u ge\u00efteresseerd bent in een specifiek schilderij, vermeld dan graag de titel en het formaat.",
       "contact.faq_title": "Veelgestelde vragen",
       "contact.faq_view_q": "Kan ik een werk in het echt zien?",
       "contact.faq_view_a":
@@ -335,6 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
     currentLang = "en";
   }
   document.documentElement.setAttribute("data-lang", currentLang);
+  document.documentElement.setAttribute("lang", currentLang);
   applyTranslations(currentLang);
 
   // Lang switcher buttons
@@ -347,6 +348,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const lang = btn.dataset.lang;
       localStorage.setItem("lang", lang);
       document.documentElement.setAttribute("data-lang", lang);
+      document.documentElement.setAttribute("lang", lang);
       langBtns.forEach((b) => b.classList.toggle("active", b === btn));
       applyTranslations(lang);
     });
@@ -432,6 +434,14 @@ document.addEventListener("DOMContentLoaded", () => {
   if (hero) {
     const heroSlides = hero.querySelectorAll(".hero-slide");
     let heroIndex = 0;
+
+    // ensure only the first slide is active initially
+    if (heroSlides.length > 0) {
+      heroSlides.forEach((slide, i) => {
+        slide.classList.toggle("active", i === 0);
+      });
+    }
+
     if (heroSlides.length > 1) {
       setInterval(() => {
         heroSlides[heroIndex].classList.remove("active");
@@ -448,9 +458,23 @@ document.addEventListener("DOMContentLoaded", () => {
   const lightboxClose = document.querySelector(".lightbox-close");
 
   if (lightbox && lightboxImage && lightboxClose) {
+    // main gallery slides
     const mainImages = document.querySelectorAll(".slide img");
 
     mainImages.forEach((img) => {
+      img.style.cursor = "zoom-in";
+      img.addEventListener("click", () => {
+        lightboxImage.src = img.src;
+        lightboxImage.alt = img.alt || "";
+        lightbox.classList.add("open");
+      });
+    });
+
+    // also enable zoom for Available page thumbnails
+    const availableImages = document.querySelectorAll(
+      ".page-available .gallery-grid img"
+    );
+    availableImages.forEach((img) => {
       img.style.cursor = "zoom-in";
       img.addEventListener("click", () => {
         lightboxImage.src = img.src;
@@ -522,10 +546,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const fadeEls = document.querySelectorAll(".fade-in");
 
-  // For safety: on Available page, force visible (avoid weird iOS bugs)
-  if (document.body.classList.contains("page-available")) {
-    fadeEls.forEach((el) => el.classList.add("visible"));
-  } else if ("IntersectionObserver" in window) {
+  if ("IntersectionObserver" in window) {
     const observer = new IntersectionObserver(
       (entries, obs) => {
         entries.forEach((entry) => {
@@ -539,6 +560,18 @@ document.addEventListener("DOMContentLoaded", () => {
     );
 
     fadeEls.forEach((el) => observer.observe(el));
+
+    // Fallback: if something goes wrong on Available page,
+    // force elements visible after a short delay
+    if (document.body.classList.contains("page-available")) {
+      setTimeout(() => {
+        fadeEls.forEach((el) => {
+          if (!el.classList.contains("visible")) {
+            el.classList.add("visible");
+          }
+        });
+      }, 600);
+    }
   } else {
     fadeEls.forEach((el) => el.classList.add("visible"));
   }
