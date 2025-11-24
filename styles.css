@@ -789,21 +789,27 @@ form .field-group {
     justify-content: space-between;
     flex-wrap: nowrap;
     overflow-x: auto;
-    font-size: 0.72rem;       /* slightly smaller so CONTACT fits */
-    letter-spacing: 0.09em;   /* a bit tighter spacing */
-    gap: 1rem;                /* smaller gap between items */
+    font-size: 0.72rem;       /* base size for EN / NL */
+    letter-spacing: 0.09em;
+    gap: 1rem;
+  }
+
+  /* make the active underline much clearer on mobile */
+  .nav-links a::after {
+    bottom: -0.2rem;
+    height: 3px;
+    background: #b87a4b;
   }
 
   /* French labels are longer → shrink a bit more */
   html[lang="fr"] .nav-links {
-    font-size: 0.66rem;
-    letter-spacing: 0.08em;
-    gap: 0.7rem;
+    font-size: 0.6rem;
+    letter-spacing: 0.07em;
+    gap: 0.5rem;
   }
 
-  .brand-main {
-    font-size: 1.35rem;
-    letter-spacing: 0.16em;
+  html[lang="fr"] .nav-links a {
+    padding-bottom: 0.2rem; /* saves a little vertical space */
   }
 
   .lang-switcher {
