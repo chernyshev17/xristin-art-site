@@ -121,6 +121,7 @@ a {
   color: #333333;
   position: relative;
   padding-bottom: 0.3rem;
+  white-space: nowrap; /* keep each label on a single line */
 }
 
 .nav-links a::after {
@@ -245,9 +246,14 @@ a {
   padding: 3rem 1.5rem;
 }
 
-/* tighter top padding on gallery page */
-.page-gallery .section {
-  padding-top: 1.5rem;
+/* bring the very first content section closer to the header */
+main .section:first-of-type {
+  padding-top: 2rem;
+}
+
+/* slightly tighter top padding on gallery page */
+.page-gallery main .section:first-of-type {
+  padding-top: 1.25rem;
 }
 
 .section-header {
@@ -764,8 +770,14 @@ form .field-group {
     justify-content: space-between;
     flex-wrap: nowrap;
     overflow-x: auto;
-    font-size: 0.75rem;
-    letter-spacing: 0.1em;
+    font-size: 0.72rem;       /* slightly smaller so CONTACT fits */
+    letter-spacing: 0.09em;   /* a bit tighter spacing */
+    gap: 1rem;                /* smaller gap between items */
+  }
+
+  .brand-main {
+    font-size: 1.35rem;
+    letter-spacing: 0.16em;
   }
 
   .lang-switcher {
