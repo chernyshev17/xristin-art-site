@@ -165,7 +165,28 @@
             >
           </article>
 
-          <!-- LANDSCAPES -->
+          <!-- LANDSCAPES – Frost moved up just after Sunflowers -->
+          <article class="gallery-item" data-series="landscape">
+            <img
+              src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
+              alt="Where Frost Whispers, 60 × 80 cm, 2024"
+            />
+            <div class="work-title">
+              Where Frost Whispers
+              <span class="badge-new" data-i18n="badge.new">New</span>
+            </div>
+            <div class="work-meta">
+              <span>Oil on canvas, 60 × 80 cm, 2024</span>
+              <span class="work-price">€ 1,800</span>
+            </div>
+            <a
+              href="contact.html?work=Where%20Frost%20Whispers%20(60x80cm)"
+              class="work-inquire"
+              data-i18n="available.inquire"
+              >Inquire about this work</a
+            >
+          </article>
+
           <article class="gallery-item" data-series="landscape">
             <img
               src="images/xristina-Clouds-2023-50x50cm-avail-250eur.jpeg"
@@ -270,27 +291,6 @@
             </div>
             <a
               href="contact.html?work=Farm%20House%20(25x25cm)"
-              class="work-inquire"
-              data-i18n="available.inquire"
-              >Inquire about this work</a
-            >
-          </article>
-
-          <article class="gallery-item" data-series="landscape">
-            <img
-              src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
-              alt="Where Frost Whispers, 60 × 80 cm, 2024"
-            />
-            <div class="work-title">
-              Where Frost Whispers
-              <span class="badge-new" data-i18n="badge.new">New</span>
-            </div>
-            <div class="work-meta">
-              <span>Oil on canvas, 60 × 80 cm, 2024</span>
-              <span class="work-price">€ 1,800</span>
-            </div>
-            <a
-              href="contact.html?work=Where%20Frost%20Whispers%20(60x80cm)"
               class="work-inquire"
               data-i18n="available.inquire"
               >Inquire about this work</a
@@ -556,6 +556,18 @@
       </section>
     </main>
 
+    <!-- Lightbox for enlarged view -->
+    <div class="lightbox" aria-hidden="true">
+      <button
+        class="lightbox-close"
+        type="button"
+        aria-label="Close enlarged image"
+      >
+        ×
+      </button>
+      <img src="" alt="" />
+    </div>
+
     <button class="back-to-top" type="button" aria-label="Back to top">
       ↑
     </button>
@@ -564,5 +576,74 @@
       © <span id="year"></span> Xristina —
       <span data-i18n="footer.rights">All rights reserved.</span>
     </footer>
+
+    <!-- Page-specific script: fade-in + lightbox for Available -->
+    <script>
+      (function () {
+        // Fade-in on scroll just for this page
+        const fadeTargets = document.querySelectorAll(
+          ".page-available .fade-in"
+        );
+        if ("IntersectionObserver" in window && fadeTargets.length) {
+          const observer = new IntersectionObserver(
+            (entries) => {
+              entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                  entry.target.classList.add("visible");
+                  observer.unobserve(entry.target);
+                }
+              });
+            },
+            { threshold: 0.15 }
+          );
+          fadeTargets.forEach((el) => observer.observe(el));
+        } else {
+          fadeTargets.forEach((el) => el.classList.add("visible"));
+        }
+
+        // Simple lightbox for all works on this page
+        const lightbox = document.querySelector(".lightbox");
+        if (!lightbox) return;
+
+        const lightboxImg = lightbox.querySelector("img");
+        const closeBtn = lightbox.querySelector(".lightbox-close");
+
+        function openLightbox(src, alt) {
+          lightboxImg.src = src;
+          lightboxImg.alt = alt || "";
+          lightbox.classList.add("open");
+          document.body.style.overflow = "hidden";
+        }
+
+        function closeLightbox() {
+          lightbox.classList.remove("open");
+          lightboxImg.src = "";
+          lightboxImg.alt = "";
+          document.body.style.overflow = "";
+        }
+
+        document
+          .querySelectorAll(".page-available .gallery-item img")
+          .forEach((img) => {
+            img.addEventListener("click", () => {
+              openLightbox(img.src, img.alt);
+            });
+          });
+
+        closeBtn.addEventListener("click", closeLightbox);
+
+        lightbox.addEventListener("click", (event) => {
+          if (event.target === lightbox) {
+            closeLightbox();
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && lightbox.classList.contains("open")) {
+            closeLightbox();
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
