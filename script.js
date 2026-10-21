@@ -393,6 +393,8 @@ document.addEventListener("DOMContentLoaded", () => {
   // disable navigation, artwork viewing or enquiries.
   let currentLang = "en";
   try { currentLang = localStorage.getItem("lang") || "en"; } catch (_) {}
+  const requestedLang = new URLSearchParams(window.location.search).get("lang");
+  if (translations[requestedLang]) currentLang = requestedLang;
   if (!translations[currentLang]) currentLang = "en";
   const t = key => translations[currentLang][key] || translations.en[key] || key;
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
