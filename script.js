@@ -404,6 +404,14 @@ document.addEventListener("DOMContentLoaded", () => {
     currentLang = lang;
     document.documentElement.lang = lang;
     document.documentElement.dataset.lang = lang;
+    document.querySelectorAll('a[href]').forEach(link => {
+      const url = new URL(link.getAttribute('href'), window.location.href);
+      if (url.origin !== window.location.origin || !/\/(?:index\.html|gallery\.html|available\.html|about\.html|contact\.html)?$/.test(url.pathname)) return;
+      if (url.pathname === '/index.html') url.pathname = '/';
+      url.searchParams.set('lang', lang);
+      url.searchParams.set('v', 'studio2');
+      link.href = url.pathname + url.search + url.hash;
+    });
     document.querySelectorAll("[data-i18n]").forEach(el => {
       const value = translations[lang][el.dataset.i18n];
       if (value !== undefined) el.textContent = value;
