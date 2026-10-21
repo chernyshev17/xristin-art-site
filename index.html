@@ -14,10 +14,11 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261021" />
+    <script src="script.js?v=20261021" defer></script>
   </head>
   <body class="page-home">
+    <a href="#main-content" class="skip-link" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header">
       <div class="wrapper site-header-inner">
         <div class="brand">
@@ -30,7 +31,7 @@
           <nav>
             <ul class="nav-links">
               <li>
-                <a href="index.html" class="active" data-i18n="nav.home">Home</a>
+                <a href="index.html" class="active" aria-current="page" data-i18n="nav.home">Home</a>
               </li>
               <li>
                 <a href="gallery.html" data-i18n="nav.gallery">Gallery</a>
@@ -55,25 +56,13 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <!-- HERO -->
       <section class="hero wrapper fade-in">
         <div class="hero-image" data-hero-slideshow>
-          <img
-            src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
-            alt="Afternoon Tea – oil painting by Xristina"
-            class="hero-slide active"
-          />
-          <img
-            src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
-            alt="Where Frost Whispers – oil painting by Xristina"
-            class="hero-slide"
-          />
-          <img
-            src="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg"
-            alt="Ghost of the Forest – oil painting by Xristina"
-            class="hero-slide"
-          />
+          <img class="hero-slide active" src="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg" width="3615" height="2580" data-original="images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg" alt="Afternoon Tea – oil painting by Xristina" loading="eager" decoding="async" />
+          <img class="hero-slide" src="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg" width="2659" height="1965" data-original="images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg" alt="Where Frost Whispers – oil painting by Xristina" loading="eager" decoding="async" />
+          <img class="hero-slide" src="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg" width="1920" height="1404" data-original="images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg" alt="Ghost of the Forest – oil painting by Xristina" loading="eager" decoding="async" />
         </div>
 
         <div>
@@ -115,6 +104,10 @@
         </div>
 
         <div class="series-grid">
+          <a href="gallery.html#oil-pastel" class="series-card">
+            <h3 data-i18n="gallery.oilpastel_title">Oil &amp; Oil Pastel</h3>
+            <p data-i18n="gallery.oilpastel_desc">Paintings combining layered oil colour with the expressive marks of oil pastel.</p>
+          </a>
           <a href="gallery.html#still-life" class="series-card">
             <h3 data-i18n="series.stilllife_title">Still Life</h3>
             <p data-i18n="series.stilllife_text">

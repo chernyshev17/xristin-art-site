@@ -329,280 +329,285 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
+  Object.assign(translations.en, {
+    "gallery.intro": "Paintings in oil and oil pastel, alongside still lifes, landscapes and the Birch Series.",
+    "gallery.oilpastel_title": "Oil & Oil Pastel",
+    "gallery.oilpastel_desc": "Paintings combining layered oil colour with the expressive marks of oil pastel.",
+    "medium.oil": "Oil on canvas",
+    "medium.oilpastel": "Oil and oil pastel on canvas",
+    "work.three_panels": "3 panels",
+    "work.each": "each",
+    "work.set_price": "for the complete set of 3",
+    "nav.skip": "Skip to content",
+    "contact.sending": "Sending…",
+    "contact.success": "Thank you — your enquiry has been submitted.",
+    "contact.error": "We could not confirm delivery. Your message is still here. Please try again or email xristina.gallery@gmail.com.",
+    "gallery.enlarge": "Enlarge",
+    "gallery.close": "Close enlarged view",
+    "gallery.previous": "Previous painting",
+    "gallery.next": "Next painting",
+    "nav.top": "Back to top",
+    "available.empty": "No works in this series are shown here."
+});
+  Object.assign(translations.fr, {
+    "gallery.intro": "Peintures à l’huile et au pastel à l’huile, natures mortes, paysages et série Bouleaux.",
+    "gallery.oilpastel_title": "Huile & pastel à l’huile",
+    "gallery.oilpastel_desc": "Des peintures associant les couches de couleur à l’huile aux traits expressifs du pastel à l’huile.",
+    "medium.oil": "Huile sur toile",
+    "medium.oilpastel": "Huile et pastel à l’huile sur toile",
+    "work.three_panels": "3 panneaux",
+    "work.each": "chacun",
+    "work.set_price": "pour l’ensemble des 3 panneaux",
+    "nav.skip": "Aller au contenu",
+    "contact.sending": "Envoi en cours…",
+    "contact.success": "Merci — votre demande a été transmise.",
+    "contact.error": "Nous n’avons pas pu confirmer l’envoi. Votre message est conservé. Réessayez ou écrivez à xristina.gallery@gmail.com.",
+    "gallery.enlarge": "Agrandir",
+    "gallery.close": "Fermer la vue agrandie",
+    "gallery.previous": "Tableau précédent",
+    "gallery.next": "Tableau suivant",
+    "nav.top": "Retour en haut",
+    "available.empty": "Aucune œuvre de cette série n’est présentée ici."
+});
+  Object.assign(translations.nl, {
+    "gallery.intro": "Schilderijen in olieverf en oliepastel, naast stillevens, landschappen en de Berkenreeks.",
+    "gallery.oilpastel_title": "Olieverf & oliepastel",
+    "gallery.oilpastel_desc": "Schilderijen waarin lagen olieverf samengaan met expressieve lijnen in oliepastel.",
+    "medium.oil": "Olieverf op doek",
+    "medium.oilpastel": "Olieverf en oliepastel op doek",
+    "work.three_panels": "3 panelen",
+    "work.each": "per paneel",
+    "work.set_price": "voor de complete set van 3",
+    "nav.skip": "Naar de inhoud",
+    "contact.sending": "Verzenden…",
+    "contact.success": "Bedankt — uw aanvraag is verzonden.",
+    "contact.error": "We konden de verzending niet bevestigen. Uw bericht staat er nog. Probeer opnieuw of mail naar xristina.gallery@gmail.com.",
+    "gallery.enlarge": "Vergroten",
+    "gallery.close": "Vergrote weergave sluiten",
+    "gallery.previous": "Vorig schilderij",
+    "gallery.next": "Volgend schilderij",
+    "nav.top": "Terug naar boven",
+    "available.empty": "Er zijn hier geen werken uit deze reeks te zien."
+});
+  // Translation text is never parsed as markup. A blocked storage API must not
+  // disable navigation, artwork viewing or enquiries.
+  let currentLang = "en";
+  try { currentLang = localStorage.getItem("lang") || "en"; } catch (_) {}
+  if (!translations[currentLang]) currentLang = "en";
+  const t = key => translations[currentLang][key] || translations.en[key] || key;
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  const scrollBehavior = () => reducedMotion.matches ? "auto" : "smooth";
+
   function applyTranslations(lang) {
-    const dict = translations[lang] || translations.en;
-    const elements = document.querySelectorAll("[data-i18n]");
-    elements.forEach((el) => {
-      const key = el.getAttribute("data-i18n");
-      const value = dict[key];
-      if (value) {
-        el.innerHTML = value;
-      }
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    document.documentElement.dataset.lang = lang;
+    document.querySelectorAll("[data-i18n]").forEach(el => {
+      const value = translations[lang][el.dataset.i18n];
+      if (value !== undefined) el.textContent = value;
+    });
+    document.querySelectorAll(".lang-btn").forEach(button => {
+      const active = button.dataset.lang === lang;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-pressed", String(active));
+    });
+    document.querySelectorAll(".artwork-view").forEach(button => {
+      const title = button.closest(".slide")?.querySelector("strong")?.textContent ||
+        button.closest(".gallery-item")?.querySelector(".work-title")?.childNodes[0]?.textContent?.trim();
+      button.setAttribute("aria-label", `${t("gallery.enlarge")} ${title}`);
+    });
+    [["[data-prev]", "gallery.previous"], ["[data-next]", "gallery.next"],
+      [".lightbox-close", "gallery.close"], [".back-to-top", "nav.top"]].forEach(([selector, key]) => {
+      document.querySelectorAll(selector).forEach(el => el.setAttribute("aria-label", t(key)));
     });
   }
-
-  // Set language from storage or default
-  let currentLang = localStorage.getItem("lang");
-  if (!currentLang || !["en", "fr", "nl"].includes(currentLang)) {
-    currentLang = "en";
-  }
-  document.documentElement.setAttribute("data-lang", currentLang);
-  document.documentElement.setAttribute("lang", currentLang);
   applyTranslations(currentLang);
-
-  // Lang switcher buttons
-  const langBtns = document.querySelectorAll(".lang-btn");
-  langBtns.forEach((btn) => {
-    if (btn.dataset.lang === currentLang) {
-      btn.classList.add("active");
-    }
-    btn.addEventListener("click", () => {
-      const lang = btn.dataset.lang;
-      localStorage.setItem("lang", lang);
-      document.documentElement.setAttribute("data-lang", lang);
-      document.documentElement.setAttribute("lang", lang);
-      langBtns.forEach((b) => b.classList.toggle("active", b === btn));
+  document.querySelectorAll(".lang-btn").forEach(button => {
+    button.addEventListener("click", () => {
+      const lang = button.dataset.lang;
+      try { localStorage.setItem("lang", lang); } catch (_) {}
       applyTranslations(lang);
     });
   });
 
-  // ===== Force gallery to open at top (fix iOS jump) =====
-  if (
-    document.body.classList.contains("page-gallery") &&
-    !window.location.hash
-  ) {
-    setTimeout(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
-    }, 50);
-  }
-
-  // ===== Slideshow (gallery page) =====
-
-  const slideshows = document.querySelectorAll("[data-slideshow]");
-
-  slideshows.forEach((slideshow) => {
-    const slides = Array.from(slideshow.querySelectorAll(".slide"));
-    if (!slides.length) return;
-
-    const thumbs = Array.from(
-      slideshow.querySelectorAll(".slideshow-thumb")
-    );
-
+  // Gallery carousels: navigation never scrolls the whole page or moves focus.
+  document.querySelectorAll("[data-slideshow]").forEach(slideshow => {
+    const slides = [...slideshow.querySelectorAll(".slide")];
+    const thumbs = [...slideshow.querySelectorAll(".slideshow-thumb")];
+    const position = slideshow.querySelector(".slideshow-position");
     let currentIndex = 0;
-
-    const showSlide = (index) => {
-      currentIndex = index;
-
+    function showSlide(index, scroll = true) {
+      currentIndex = (index + slides.length) % slides.length;
       slides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === index);
+        slide.classList.toggle("active", i === currentIndex);
+        slide.hidden = i !== currentIndex;
       });
-
-      if (thumbs.length) {
-        thumbs.forEach((thumb, i) => {
-          thumb.classList.toggle("active", i === index);
-        });
-
-        const activeThumb = thumbs[index];
-        if (activeThumb) {
-          const container = activeThumb.parentElement;
-          const offset =
-            activeThumb.offsetLeft -
-            (container.clientWidth / 2 - activeThumb.clientWidth / 2);
-          container.scrollTo({
-            left: Math.max(0, offset),
-            behavior: "smooth"
-          });
-        }
+      thumbs.forEach((thumb, i) => {
+        thumb.classList.toggle("active", i === currentIndex);
+        thumb.setAttribute("aria-pressed", String(i === currentIndex));
+      });
+      if (position) position.textContent = `${currentIndex + 1} / ${slides.length}`;
+      if (scroll && thumbs[currentIndex]) {
+        const thumb = thumbs[currentIndex];
+        const row = thumb.parentElement;
+        row.scrollTo({left: Math.max(0, thumb.offsetLeft - row.offsetLeft - (row.clientWidth - thumb.clientWidth) / 2), behavior: scrollBehavior()});
       }
-    };
-
-    const nextBtn = slideshow.querySelector("[data-next]");
-    const prevBtn = slideshow.querySelector("[data-prev]");
-
-    if (nextBtn) {
-      nextBtn.addEventListener("click", () => {
-        const nextIndex = (currentIndex + 1) % slides.length;
-        showSlide(nextIndex);
-      });
     }
-
-    if (prevBtn) {
-      prevBtn.addEventListener("click", () => {
-        const prevIndex = (currentIndex - 1 + slides.length) % slides.length;
-        showSlide(prevIndex);
-      });
-    }
-
-    thumbs.forEach((thumb, i) => {
-      thumb.addEventListener("click", () => showSlide(i));
+    slideshow.querySelector("[data-prev]")?.addEventListener("click", () => showSlide(currentIndex - 1));
+    slideshow.querySelector("[data-next]")?.addEventListener("click", () => showSlide(currentIndex + 1));
+    thumbs.forEach((thumb, i) => thumb.addEventListener("click", () => showSlide(i)));
+    slideshow.addEventListener("keydown", event => {
+      if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+        event.preventDefault();
+        showSlide(currentIndex + (event.key === "ArrowRight" ? 1 : -1));
+      }
     });
-
-    showSlide(0);
+    showSlide(0, false);
   });
 
-  // ===== Hero slideshow (home) =====
-
-  const hero = document.querySelector("[data-hero-slideshow]");
-  if (hero) {
-    const heroSlides = hero.querySelectorAll(".hero-slide");
-    let heroIndex = 0;
-
-    // ensure only the first slide is active initially
-    if (heroSlides.length > 0) {
-      heroSlides.forEach((slide, i) => {
-        slide.classList.toggle("active", i === 0);
-      });
-    }
-
-    if (heroSlides.length > 1) {
-      setInterval(() => {
-        heroSlides[heroIndex].classList.remove("active");
-        heroIndex = (heroIndex + 1) % heroSlides.length;
-        heroSlides[heroIndex].classList.add("active");
-      }, 7000);
-    }
-  }
-
-  // ===== Lightbox =====
-
+  // One native modal for single paintings and the complete triptych. The
+  // browser handles focus containment, Escape, and hiding the background.
   const lightbox = document.getElementById("lightbox");
-  const lightboxImage = document.getElementById("lightbox-image");
-  const lightboxClose = document.querySelector(".lightbox-close");
-
-  if (lightbox && lightboxImage && lightboxClose) {
-    // main gallery slides
-    const mainImages = document.querySelectorAll(".slide img");
-
-    mainImages.forEach((img) => {
-      img.style.cursor = "zoom-in";
-      img.addEventListener("click", () => {
-        lightboxImage.src = img.src;
-        lightboxImage.alt = img.alt || "";
-        lightbox.classList.add("open");
-      });
-    });
-
-    // also enable zoom for Available page thumbnails
-    const availableImages = document.querySelectorAll(
-      ".page-available .gallery-grid img"
-    );
-    availableImages.forEach((img) => {
-      img.style.cursor = "zoom-in";
-      img.addEventListener("click", () => {
-        lightboxImage.src = img.src;
-        lightboxImage.alt = img.alt || "";
-        lightbox.classList.add("open");
-      });
-    });
-
-    const closeLightbox = () => {
-      lightbox.classList.remove("open");
-      lightboxImage.src = "";
-    };
-
-    lightboxClose.addEventListener("click", closeLightbox);
-
-    lightbox.addEventListener("click", (e) => {
-      if (e.target === lightbox) {
-        closeLightbox();
-      }
-    });
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape" && lightbox.classList.contains("open")) {
-        closeLightbox();
-      }
-    });
-  }
-
-  // ===== Available filters =====
-
-  const filterBars = document.querySelectorAll(".filter-bar");
-  if (filterBars.length) {
-    const allItems = document.querySelectorAll(".gallery-grid [data-series]");
-    filterBars.forEach((bar) => {
-      const buttons = bar.querySelectorAll(".filter-btn");
-      buttons.forEach((btn) => {
-        btn.addEventListener("click", () => {
-          const value = btn.dataset.seriesFilter;
-          buttons.forEach((b) =>
-            b.classList.toggle("active", b === btn)
-          );
-          allItems.forEach((item) => {
-            const series = item.dataset.series;
-            if (value === "all" || series === value) {
-              item.style.display = "";
-            } else {
-              item.style.display = "none";
-            }
-          });
+  if (lightbox) {
+    const artwork = lightbox.querySelector(".lightbox-artwork");
+    const caption = lightbox.querySelector("#lightbox-caption");
+    let opener;
+    document.querySelectorAll(".artwork-view").forEach(button => {
+      button.addEventListener("click", () => {
+        opener = button;
+        artwork.replaceChildren();
+        const triptych = button.querySelector(".triptych");
+        const holder = triptych ? document.createElement("div") : artwork;
+        if (triptych) {
+          holder.className = "triptych";
+          artwork.append(holder);
+        }
+        button.querySelectorAll("img").forEach(source => {
+          const image = new Image();
+          image.src = source.dataset.original || source.currentSrc;
+          image.alt = source.alt;
+          holder.append(image);
         });
+        const info = button.closest(".slide")?.querySelector(".slideshow-caption");
+        const card = button.closest(".gallery-item");
+        const details = card ? [...card.querySelector(".work-meta").children].map(el => el.textContent).join(" · ") : "";
+        caption.textContent = info?.textContent || [card?.querySelector(".work-title")?.textContent, details].filter(Boolean).join(" — ");
+        lightbox.showModal();
+        document.body.classList.add("modal-open");
       });
+    });
+    lightbox.querySelector(".lightbox-close").addEventListener("click", () => lightbox.close());
+    lightbox.addEventListener("click", event => { if (event.target === lightbox) lightbox.close(); });
+    lightbox.addEventListener("close", () => {
+      document.body.classList.remove("modal-open");
+      artwork.replaceChildren();
+      opener?.focus({preventScroll: true});
     });
   }
 
-  // ===== Back to top =====
+  // Apply each filter to both Available and Sold, and hide an empty Sold group.
+  const allItems = [...document.querySelectorAll(".gallery-item[data-series]")];
+  const soldSection = document.querySelector("[data-i18n='available.sold_title']")?.closest("section");
+  document.querySelectorAll(".filter-bar").forEach(bar => {
+    const buttons = [...bar.querySelectorAll(".filter-btn")];
+    buttons.forEach(button => {
+      button.setAttribute("aria-pressed", String(button.classList.contains("active")));
+      button.addEventListener("click", () => {
+        buttons.forEach(other => {
+          other.classList.toggle("active", other === button);
+          other.setAttribute("aria-pressed", String(other === button));
+        });
+        allItems.forEach(item => { item.hidden = button.dataset.seriesFilter !== "all" && item.dataset.series !== button.dataset.seriesFilter; });
+        if (soldSection) {
+          const anySold = [...soldSection.querySelectorAll(".gallery-item")].some(item => !item.hidden);
+          // Keep practical information visible even when there are no sold works.
+          soldSection.querySelector(".section-header").hidden = !anySold;
+          soldSection.querySelector(".gallery-grid").hidden = !anySold;
+        }
+      });
+    });
+  });
+
+  // The real form action also works without JavaScript. On failure, keep the
+  // complete message so the visitor can retry or use the visible email link.
+  const form = document.querySelector(".contact-form");
+  if (form) {
+    const work = new URLSearchParams(location.search).get("work");
+    if (work) form.elements.work.value = work;
+    if (window.fetch && window.AbortController) {
+      let sending = false;
+      form.addEventListener("submit", async event => {
+        event.preventDefault();
+        if (sending || !form.reportValidity()) return;
+        sending = true;
+        const button = form.querySelector("[type='submit']");
+        const status = form.querySelector(".form-status");
+        const controller = new AbortController();
+        const timeout = setTimeout(() => controller.abort(), 20000);
+        button.disabled = true;
+        button.dataset.i18n = "contact.sending";
+        button.textContent = t("contact.sending");
+        form.setAttribute("aria-busy", "true");
+        status.hidden = true;
+        try {
+          const response = await fetch(form.action, {method: "POST", body: new FormData(form), headers: {Accept: "application/json"}, signal: controller.signal});
+          const data = await response.json();
+          if (!response.ok || data.ok !== true) throw new Error("Delivery not confirmed");
+          status.dataset.i18n = "contact.success";
+          status.textContent = t("contact.success");
+          status.dataset.state = "success";
+          form.reset();
+        } catch (_) {
+          status.dataset.i18n = "contact.error";
+          status.textContent = t("contact.error");
+          status.dataset.state = "error";
+        } finally {
+          clearTimeout(timeout);
+          status.hidden = false;
+          button.disabled = false;
+          button.dataset.i18n = "contact.form_submit";
+          button.textContent = t("contact.form_submit");
+          form.removeAttribute("aria-busy");
+          sending = false;
+        }
+      });
+    }
+  }
 
   const backToTop = document.querySelector(".back-to-top");
   if (backToTop) {
-    window.addEventListener("scroll", () => {
-      backToTop.classList.toggle("visible", window.scrollY > 400);
+    const update = () => { backToTop.hidden = window.scrollY <= 400; backToTop.classList.toggle("visible", window.scrollY > 400); };
+    window.addEventListener("scroll", update, {passive: true});
+    backToTop.addEventListener("click", () => window.scrollTo({top: 0, behavior: scrollBehavior()}));
+    update();
+  }
+  document.querySelectorAll(".fade-in").forEach(element => element.classList.add("visible"));
+  const year = document.getElementById("year");
+  if (year) year.textContent = new Date().getFullYear();
+
+  const hero = document.querySelector("[data-hero-slideshow]");
+  if (hero) {
+    const slides = [...hero.querySelectorAll(".hero-slide")];
+    let index = 0;
+    const pause = document.createElement("button");
+    pause.type = "button";
+    pause.className = "hero-pause";
+    pause.textContent = "Ⅱ";
+    pause.setAttribute("aria-label", "Pause slideshow");
+    pause.setAttribute("aria-pressed", "false");
+    hero.append(pause);
+    let paused = false;
+    pause.addEventListener("click", () => {
+      paused = !paused;
+      pause.textContent = paused ? "▶" : "Ⅱ";
+      pause.setAttribute("aria-label", paused ? "Play slideshow" : "Pause slideshow");
+      pause.setAttribute("aria-pressed", String(paused));
     });
-
-    backToTop.addEventListener("click", () => {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-  }
-
-  // ===== Fade-in on scroll =====
-
-  const fadeEls = document.querySelectorAll(".fade-in");
-
-  if ("IntersectionObserver" in window) {
-    const observer = new IntersectionObserver(
-      (entries, obs) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            obs.unobserve(entry.target);
-          }
-        });
-      },
-      { threshold: 0.15 }
-    );
-
-    fadeEls.forEach((el) => observer.observe(el));
-
-    // Fallback: if something goes wrong on Available page,
-    // force elements visible after a short delay
-    if (document.body.classList.contains("page-available")) {
-      setTimeout(() => {
-        fadeEls.forEach((el) => {
-          if (!el.classList.contains("visible")) {
-            el.classList.add("visible");
-          }
-        });
-      }, 600);
-    }
-  } else {
-    fadeEls.forEach((el) => el.classList.add("visible"));
-  }
-
-  // ===== Contact: prefill "work" field from query =====
-
-  const urlParams = new URLSearchParams(window.location.search);
-  const workParam = urlParams.get("work");
-  if (workParam) {
-    const workInput = document.getElementById("work");
-    if (workInput) {
-      workInput.value = workParam; // no extra decode
-    }
-  }
-
-  // ===== Set footer year =====
-
-  const yearSpan = document.getElementById("year");
-  if (yearSpan) {
-    yearSpan.textContent = new Date().getFullYear();
+    setInterval(() => {
+      if (paused || reducedMotion.matches || document.hidden || hero.matches(":hover") || hero.contains(document.activeElement) || slides.length < 2) return;
+      slides[index].classList.remove("active");
+      index = (index + 1) % slides.length;
+      slides[index].classList.add("active");
+    }, 7000);
   }
 });

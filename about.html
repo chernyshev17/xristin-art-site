@@ -14,10 +14,11 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261021" />
+    <script src="script.js?v=20261021" defer></script>
   </head>
   <body class="page-about">
+    <a href="#main-content" class="skip-link" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header">
       <div class="wrapper site-header-inner">
         <div class="brand">
@@ -39,7 +40,7 @@
                 <a href="available.html" data-i18n="nav.available">Available</a>
               </li>
               <li>
-                <a href="about.html" class="active" data-i18n="nav.about"
+                <a href="about.html" class="active" aria-current="page" data-i18n="nav.about"
                   >About</a
                 >
               </li>
@@ -57,7 +58,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="section wrapper fade-in">
         <div class="section-header">
           <h1 data-i18n="about.title">About</h1>
@@ -65,11 +66,7 @@
 
         <div class="about-layout">
           <div class="about-photo">
-            <img
-              src="images/portrait.jpg"
-              alt="Portrait of Xristina"
-              loading="lazy"
-            />
+            <img src="images/portrait.jpg" width="1290" height="1592" data-original="images/portrait.jpg" alt="Portrait of Xristina" loading="eager" decoding="async" />
           </div>
 
           <div class="about-text">
