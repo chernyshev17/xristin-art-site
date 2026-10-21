@@ -22,7 +22,7 @@
     "heightCm": 60,
     "widthCm": 30,
     "year": 2026,
-    "priceEur": 1200,
+    "priceEur": 750,
     "status": "available",
     "isNew": true,
     "images": [
@@ -40,7 +40,7 @@
     "heightCm": 90,
     "widthCm": 150,
     "year": 2026,
-    "priceEur": 1200,
+    "priceEur": 1000,
     "status": "available",
     "isNew": true,
     "images": [
@@ -55,7 +55,7 @@
     "heightCm": 60,
     "widthCm": 80,
     "year": 2024,
-    "priceEur": 2500,
+    "priceEur": 1100,
     "status": "available",
     "isNew": false,
     "images": [
@@ -70,7 +70,7 @@
     "heightCm": 60,
     "widthCm": 40,
     "year": 2024,
-    "priceEur": 1500,
+    "priceEur": 550,
     "status": "available",
     "isNew": false,
     "images": [
@@ -85,7 +85,7 @@
     "heightCm": 80,
     "widthCm": 60,
     "year": 2024,
-    "priceEur": 1200,
+    "priceEur": 500,
     "status": "available",
     "isNew": false,
     "images": [
@@ -115,7 +115,7 @@
     "heightCm": 60,
     "widthCm": 80,
     "year": 2026,
-    "priceEur": 500,
+    "priceEur": 450,
     "status": "available",
     "isNew": true,
     "images": [
@@ -160,7 +160,7 @@
     "heightCm": 60,
     "widthCm": 80,
     "year": 2024,
-    "priceEur": 1800,
+    "priceEur": 1000,
     "status": "available",
     "isNew": true,
     "images": [
@@ -190,7 +190,7 @@
     "heightCm": 20,
     "widthCm": 40,
     "year": 2024,
-    "priceEur": 200,
+    "priceEur": 150,
     "status": "available",
     "isNew": false,
     "images": [
