@@ -14,10 +14,11 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="styles.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css?v=20261021" />
+    <script src="script.js?v=20261021" defer></script>
   </head>
   <body class="page-contact">
+    <a href="#main-content" class="skip-link" data-i18n="nav.skip">Skip to content</a>
     <header class="site-header">
       <div class="wrapper site-header-inner">
         <div class="brand">
@@ -44,7 +45,7 @@
               <li>
                 <a
                   href="contact.html"
-                  class="active"
+                  class="active" aria-current="page"
                   data-i18n="nav.contact"
                   >Contact</a
                 >
@@ -60,7 +61,7 @@
       </div>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="section wrapper fade-in">
         <div class="section-header">
           <h1 data-i18n="contact.title">Contact</h1>
@@ -73,20 +74,20 @@
         <div class="contact-layout">
           <div>
             <form
-              action="https://formspree.io/f/your-form-id"
+              action="https://formspree.io/f/xqajkaww"
               method="POST"
               class="contact-form"
             >
               <div class="field-group">
                 <label for="name" data-i18n="contact.form_name_label">Name</label>
-                <input id="name" name="name" type="text" required />
+                <input id="name" name="name" type="text" autocomplete="name" required />
               </div>
 
               <div class="field-group">
                 <label for="email" data-i18n="contact.form_email_label"
                   >Email</label
                 >
-                <input id="email" name="email" type="email" required />
+                <input id="email" name="email" type="email" autocomplete="email" required />
               </div>
 
               <div class="field-group">
@@ -103,6 +104,9 @@
                 <textarea id="message" name="message" required></textarea>
               </div>
 
+              <input type="text" name="_gotcha" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true" />
+              <input type="hidden" name="_subject" value="Enquiry from xristin.art" />
+              <p class="form-status" role="status" aria-live="polite" hidden></p>
               <button
                 type="submit"
                 class="button"
@@ -115,6 +119,7 @@
 
           <div class="contact-details">
             <h2 data-i18n="contact.side_title">Studio & contact</h2>
+            <p><a href="mailto:xristina.gallery@gmail.com">xristina.gallery@gmail.com</a></p>
             <p data-i18n="contact.side_text_1">
               Based in Belgium, working mainly in oil on canvas.
             </p>

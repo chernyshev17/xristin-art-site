@@ -1,0 +1,515 @@
+[
+  {
+    "id": "sunflowers-ii",
+    "title": "Sunflowers II",
+    "series": "still-life",
+    "medium": "oil",
+    "heightCm": 80,
+    "widthCm": 60,
+    "year": 2026,
+    "priceEur": 500,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Sunflowers II-2026-80x60cm-avail-500eur.jpeg"
+    ]
+  },
+  {
+    "id": "magnolia-triptych",
+    "title": "Magnolia Triptych",
+    "series": "still-life",
+    "medium": "oil",
+    "heightCm": 60,
+    "widthCm": 30,
+    "year": 2026,
+    "priceEur": 1200,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Magnolia Tryptich I-2026-60x30cm-avail-1200eur.jpeg",
+      "images/xristina-Magnolia Tryptich II-2026-60x30cm-avail-1200eur.jpeg",
+      "images/xristina-Magnolia Tryptich III-2026-60x30cm-avail-1200eur.jpeg"
+    ],
+    "panels": 3
+  },
+  {
+    "id": "sunflower-field",
+    "title": "Sunflower Field",
+    "series": "still-life",
+    "medium": "oil",
+    "heightCm": 90,
+    "widthCm": 150,
+    "year": 2026,
+    "priceEur": 1200,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Sunflower Field-2026-90x150cm-avail-1200eur.jpeg"
+    ]
+  },
+  {
+    "id": "afternoon-tea",
+    "title": "Afternoon Tea",
+    "series": "still-life",
+    "medium": "oil",
+    "heightCm": 60,
+    "widthCm": 80,
+    "year": 2024,
+    "priceEur": 2500,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Afternoon-Tea-2024-60x80cm-avail-2500eur.jpeg"
+    ]
+  },
+  {
+    "id": "poppies",
+    "title": "Poppies",
+    "series": "still-life",
+    "medium": "oil",
+    "heightCm": 60,
+    "widthCm": 40,
+    "year": 2024,
+    "priceEur": 1500,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Poppies-2024-60x40cm-avail-1500eur.jpeg"
+    ]
+  },
+  {
+    "id": "sunflowers",
+    "title": "Sunflowers",
+    "series": "still-life",
+    "medium": "oil",
+    "heightCm": 80,
+    "widthCm": 60,
+    "year": 2024,
+    "priceEur": 1200,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Sunflowers-2024-80x60cm-avail-1200eur.jpeg"
+    ]
+  },
+  {
+    "id": "candy-clouds",
+    "title": "Candy Clouds",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 60,
+    "widthCm": 80,
+    "year": 2026,
+    "priceEur": 300,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Candy Clouds-2026-60x80cm-avail-300eur.jpeg"
+    ]
+  },
+  {
+    "id": "dacha",
+    "title": "Dacha",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 60,
+    "widthCm": 80,
+    "year": 2026,
+    "priceEur": 500,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Dacha-2026-60x80cm-avail-500eur.jpeg"
+    ]
+  },
+  {
+    "id": "ghost-of-the-mist",
+    "title": "Ghost of the Mist",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 60,
+    "widthCm": 80,
+    "year": 2026,
+    "priceEur": 400,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Ghost of the Mist-2026-60x80cm-avail-400eur.jpeg"
+    ]
+  },
+  {
+    "id": "two-swans",
+    "title": "Two Swans",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 60,
+    "widthCm": 80,
+    "year": 2026,
+    "priceEur": 400,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Two Swans-2026-60x80cm-avail-400eur.jpeg"
+    ]
+  },
+  {
+    "id": "where-frost-whispers",
+    "title": "Where Frost Whispers",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 60,
+    "widthCm": 80,
+    "year": 2024,
+    "priceEur": 1800,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Where-Frost-Wispers-2024-60x80cm-avail-1800eur copy.jpeg"
+    ]
+  },
+  {
+    "id": "clouds",
+    "title": "Clouds",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 50,
+    "widthCm": 50,
+    "year": 2023,
+    "priceEur": 250,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Clouds-2023-50x50cm-avail-250eur.jpeg"
+    ]
+  },
+  {
+    "id": "grey-hour",
+    "title": "Grey Hour",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 20,
+    "widthCm": 40,
+    "year": 2024,
+    "priceEur": 200,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Grey-Hour-2024-20x40cm-avail-200eur.jpeg"
+    ]
+  },
+  {
+    "id": "path-across-the-field",
+    "title": "Path Across the Field",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 20,
+    "widthCm": 30,
+    "year": 2021,
+    "priceEur": 80,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Path-Across-the-Field-2021-20x30cm-avail-80eur.jpeg"
+    ]
+  },
+  {
+    "id": "river",
+    "title": "River",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 30,
+    "widthCm": 40,
+    "year": 2024,
+    "priceEur": 100,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-River-2024-30x40cm-avail-100eur.jpeg"
+    ]
+  },
+  {
+    "id": "thunder",
+    "title": "Thunder",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 40,
+    "widthCm": 20,
+    "year": 2025,
+    "priceEur": 120,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Thunder-2025-40x20cm-avail-120eur.jpeg"
+    ]
+  },
+  {
+    "id": "farm-house",
+    "title": "Farm House",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 25,
+    "widthCm": 25,
+    "year": 2024,
+    "priceEur": 80,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Farm-House-2024-25x25cm-avail-80eur.jpeg"
+    ]
+  },
+  {
+    "id": "the-sunset-of-kuindzhi",
+    "title": "The Sunset of Kuindzhi",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 60,
+    "widthCm": 80,
+    "year": 2024,
+    "priceEur": 300,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-The-Sunset-of-Kuindzhi-2024-60x80cm-avail-300eur.jpeg"
+    ]
+  },
+  {
+    "id": "sunday-brunch",
+    "title": "Sunday Brunch",
+    "series": "oil-pastel",
+    "medium": "oil-pastel",
+    "heightCm": 100,
+    "widthCm": 80,
+    "year": 2026,
+    "priceEur": 600,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Sunday Brunch-2026-100x80cm-avail-600eur.jpeg"
+    ]
+  },
+  {
+    "id": "wildflower-garden",
+    "title": "Wildflower Garden",
+    "series": "oil-pastel",
+    "medium": "oil-pastel",
+    "heightCm": 100,
+    "widthCm": 80,
+    "year": 2026,
+    "priceEur": 600,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Wildflower Garden-2026-100x80cm-avail-600eur 2.jpeg"
+    ]
+  },
+  {
+    "id": "swimmers",
+    "title": "Swimmers",
+    "series": "oil-pastel",
+    "medium": "oil-pastel",
+    "heightCm": 100,
+    "widthCm": 80,
+    "year": 2026,
+    "priceEur": 600,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Swimmers-2026-100x80cm-avail-600eur.jpeg"
+    ]
+  },
+  {
+    "id": "blooming-street",
+    "title": "Blooming Street",
+    "series": "oil-pastel",
+    "medium": "oil-pastel",
+    "heightCm": 100,
+    "widthCm": 80,
+    "year": 2026,
+    "priceEur": 600,
+    "status": "available",
+    "isNew": true,
+    "images": [
+      "images/xristina-Blooming Street-2026-100x80cm-avail-600eur.jpeg"
+    ]
+  },
+  {
+    "id": "birch-i",
+    "title": "Birch I",
+    "series": "birch",
+    "medium": "oil",
+    "heightCm": 90,
+    "widthCm": 50,
+    "year": 2023,
+    "priceEur": 300,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Birch I-2023-90x50cm-avail-300eur.jpeg"
+    ]
+  },
+  {
+    "id": "birch-ii",
+    "title": "Birch II",
+    "series": "birch",
+    "medium": "oil",
+    "heightCm": 90,
+    "widthCm": 50,
+    "year": 2023,
+    "priceEur": 300,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Birch II-2023-90x50cm-avail-300eur.jpeg"
+    ]
+  },
+  {
+    "id": "birch-iii",
+    "title": "Birch III",
+    "series": "birch",
+    "medium": "oil",
+    "heightCm": 90,
+    "widthCm": 50,
+    "year": 2023,
+    "priceEur": 300,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Birch III-2023-90x50cm-avail-300eur.jpeg"
+    ]
+  },
+  {
+    "id": "birch-iv",
+    "title": "Birch IV",
+    "series": "birch",
+    "medium": "oil",
+    "heightCm": 90,
+    "widthCm": 50,
+    "year": 2023,
+    "priceEur": 300,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Birch IV-2023-90x50cm-avail-300eur.jpeg"
+    ]
+  },
+  {
+    "id": "birch-v",
+    "title": "Birch V",
+    "series": "birch",
+    "medium": "oil",
+    "heightCm": 90,
+    "widthCm": 50,
+    "year": 2023,
+    "priceEur": 300,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Birch V-2023-90x50cm-avail-300eur.jpeg"
+    ]
+  },
+  {
+    "id": "birch-vi",
+    "title": "Birch VI",
+    "series": "birch",
+    "medium": "oil",
+    "heightCm": 90,
+    "widthCm": 50,
+    "year": 2023,
+    "priceEur": 300,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Birch VI-2023-90x50cm-avail-300eur.jpeg"
+    ]
+  },
+  {
+    "id": "birch-vii",
+    "title": "Birch VII",
+    "series": "birch",
+    "medium": "oil",
+    "heightCm": 90,
+    "widthCm": 50,
+    "year": 2023,
+    "priceEur": 300,
+    "status": "available",
+    "isNew": false,
+    "images": [
+      "images/xristina-Birch VII-2023-90x50cm-avail-300eur.jpeg"
+    ]
+  },
+  {
+    "id": "ghost-of-the-forest",
+    "title": "Ghost of the Forest",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 60,
+    "widthCm": 80,
+    "year": 2024,
+    "priceEur": 1100,
+    "status": "sold",
+    "isNew": false,
+    "images": [
+      "images/xristina-Ghost-of-the-Forest-2024-60x80cm-SOLD-1100eur.jpeg"
+    ]
+  },
+  {
+    "id": "savanna-sunset",
+    "title": "Savanna Sunset",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 30,
+    "widthCm": 40,
+    "year": 2024,
+    "priceEur": 500,
+    "status": "sold",
+    "isNew": false,
+    "images": [
+      "images/xristina-Savanna-Sunset-2024-30x40cm-SOLD-500eur.jpeg"
+    ]
+  },
+  {
+    "id": "golden-sunset",
+    "title": "Golden Sunset",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 30,
+    "widthCm": 20,
+    "year": 2022,
+    "priceEur": 100,
+    "status": "sold",
+    "isNew": false,
+    "images": [
+      "images/xristina-Golden-Sunset-2022-30x20cm-SOLD-100eur.jpeg"
+    ]
+  },
+  {
+    "id": "pebble-beach-7-hole",
+    "title": "Pebble Beach 7 Hole",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 25,
+    "widthCm": 25,
+    "year": 2024,
+    "priceEur": 60,
+    "status": "sold",
+    "isNew": false,
+    "images": [
+      "images/xristina-Pebble-Beach-7-Hole-2024-25x25cm-SOLD-60eur.jpeg"
+    ]
+  },
+  {
+    "id": "cypress",
+    "title": "Cypress",
+    "series": "landscape",
+    "medium": "oil",
+    "heightCm": 20,
+    "widthCm": 30,
+    "year": 2023,
+    "priceEur": 90,
+    "status": "sold",
+    "isNew": false,
+    "images": [
+      "images/xristina-Cypress-2023-20x30cm-SOLD-90eur.jpeg"
+    ]
+  }
+]
